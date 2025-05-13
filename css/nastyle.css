@@ -1,0 +1,26 @@
+.navbar-scrolled {
+    background-color:#326964;
+     /* Change this to your desired scroll color */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+   /* Optional: change text color if needed */
+   /* color: white; */
+  }
+  
+  /* Optional: if you want to change the logo/text color when scrolled */
+  .navbar-scrolled .text-white {
+   color: #f8fafc; /* Change to your desired text color */
+  }
+  
+  
+ /* Optional smooth transition */
+ .search-card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.search-card.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+  
+  
+  

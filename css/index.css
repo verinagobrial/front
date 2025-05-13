@@ -1,0 +1,265 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    /* background-image: url(/photos/webdawn.png); */
+    /* background:#edfcfa; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Apply blur through backdrop-filter instead */
+}
+
+.navbar-scrolled {
+background-color:#30444b;
+/* Change this to your desired scroll color */
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+/* Optional: change text color if needed */
+/* color: white; */
+}
+
+/* Optional: if you want to change the logo/text color when scrolled */
+.navbar-scrolled .text-white {
+color: #f8fafc; /* Change to your desired text color */
+}
+/* Add this to create a blurred overlay effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+@layer utilities {
+    .text-shadow {
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+    .backdrop-blur {
+        backdrop-filter: blur(10px);
+    }
+    .mask-fade-bottom {
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+@font-face {
+    font-family: 'Greek-Freak';
+    src: url('/fonts/Greek-Freak.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Ensures text remains visible during load */
+  }
+  
+    /* Custom CSS for seamless animation */
+    .slider-container {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .slider-track {
+        display: flex;
+        width: 90%; /* Double width to accommodate duplicate slides */
+        animation: slide 20s linear infinite;
+        gap: 0; /* Remove any default gap between items */
+    }
+    
+    .slider-item {
+        flex: 0 0 25%; /* Show 4 images at a time */
+        padding: 0 0.125rem; /* Reduced from 0.5rem to 0.25rem */
+        box-sizing: border-box;
+    }
+    
+    .slider-item img {
+        width: 80%;
+        height: 220px; /* Reduced height for smaller images */
+        object-fit: cover;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .slider-item:hover img {
+        transform: scale(1.03); /* Slight zoom on hover */
+    }
+    
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%); /* Move half way (duplicate slides) */
+        }
+    }
+    
+    /* Pause on hover */
+    .slider-container:hover .slider-track {
+        animation-play-state: paused;
+    }
+
+.swiper-slide img {
+    transition: transform 0.3s ease-in-out;
+    border-radius: 30px;
+}
+.swiper-slide img:hover {
+    transform: scale(1.1);
+}
+
+.swiper-slide img {
+    transition: transform 0.3s ease-in-out;
+    border-radius: 30px;
+}
+.swiper-slide img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Card Styling */
+.tour-card {
+    border-radius: 30px;
+    background: white;
+    padding: 0px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tour-card img {
+    transition: transform 0.5s ease-in-out;
+    border-radius: 20px;
+}
+
+/* Heart Icon Animation */
+.heart-btn {
+    transition: all 0.3s ease-in-out;
+}
+
+.heart-btn.active {
+    color: red;
+    transform: scale(1.2);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.button {
+    background: rgb(255, 115, 0);
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: x-large;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: rgb(170, 64, 2);
+    transform: translateY(-2px);
+}
+
+@keyframes infinite-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-infinite-scroll {
+    animation: infinite-scroll 20s linear infinite;
+    display: flex;
+    width: max-content;
+}
+
+.hover\:animation-paused:hover {
+    animation-play-state: paused;
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+@keyframes scaleIn {
+    from { 
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pulse animation for CTA */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.playfair {
+    font-family: 'Playfair Display', serif;
+}
+.roboto-light {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}

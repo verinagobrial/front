@@ -1,0 +1,25 @@
+.navbar-scrolled {
+    background-color: #45575d;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-scrolled .text-white {
+    color: #f8fafc;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate__fadeInDown {
+    animation: fadeInDown 1s both;
+}
+@font-face {
+    font-family: 'Greek-Freak';
+    src: url('/fonts/Greek-Freak.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Ensures text remains visible during load */
+  }

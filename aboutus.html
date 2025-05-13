@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Modern Tech Solutions</title>
+    <link rel="stylesheet" href="css/aboutus.css">
+    <link rel="stylesheet" href="css/nastyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+     <!-- Font Awesome -->
+ <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+ 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+ <!-- Tailwind CSS -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <!-- Animate.css -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> 
+ <!-- GSAP -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js/nav.js" defer></script>
+    <script src="script.js/footer.js" defer></script>
+  
+    <style>
+        @font-face {
+        font-family: 'Greek-Freak';
+        src: url('/fonts/Greek-Freak.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap; /* Ensures text remains visible during load */
+      }
+    
+     </style>
+    </head>
+    <body class="overflow-x-hidden">
+        <main>
+           <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 left-0 w-full flex justify-between items-center p-4 transition-colors duration-300 z-50 bg-white/10 backdrop-blur">
+        <div class="flex items-center">
+        
+        
+        <!-- Fixed Dropdown beside "Alexplore" -->
+        <div class="relative">
+            <button id="dropdown-button" class="text-white text-2xl hover:text-yellow-500 transition-colors left-5">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div id="dropdown-menu" class="hidden absolute top-full left-0 bg-white shadow-lg rounded-md min-w-[180px] z-50 animate__animated animate__fadeIn">
+                <a href="home.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Home</a>
+                <a href="aboutus.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">About Us</a>
+                <a href="#contact" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Contact Us</a>
+                <a href="login.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Login</a>
+                <a href="destinations.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors"> Destinations </a>
+                <a href="hotels.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Hotels & resturants</a>
+                <a href="packages.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Packages</a>
+                <a href="activites.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Activities & hidden grems</a>
+                
+            </div>
+        </div>
+        <span class="text-white text-4xl font-bold mr-4 font-[Greek-Freak] animate__animated animate__fadeInDown ml-4">Alexplore</span>
+    </div>
+
+    
+        <nav class="hidden md:flex space-x-6 text-lg">
+            <a href="home.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Home</a>
+            <a href="aboutus.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">About Us</a>
+            <a href="#contact" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Contact Us</a>
+            <a href="packages.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Packages</a>
+        </nav>
+    
+        <div class="flex items-center gap-2"> <!-- Changed from gap-4 to gap-2 -->
+            <!-- Search Icon -->
+            <button id="searchToggle" class="text-white hover:text-yellow-500 focus:outline-none px-2"> <!-- Added px-2 -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
+            
+            <!-- Account Icon -->
+            <a href="login.html" class="text-white hover:text-yellow-500 transition-colors px-2"> <!-- Added px-2 -->
+                <i class="fa-solid fa-user text-xl"></i> <!-- Added explicit text-xl -->
+            </a>
+            
+            <!-- Booking Button -->
+            <a href="booking.html">
+                <button class="bg-yellow-500 text-white px-3 py-1.5 rounded-lg hover:bg-yellow-600 transition-colors text-base font-bold"> <!-- Reduced padding and font size -->
+                    Booking
+                </button>
+            </a>
+        </div>
+    </header>
+     <!-- Search Card -->
+     <div id="searchCard" class="search-card hidden fixed top-20 right-4 bg-white p-4 rounded-lg shadow-lg z-50 w-80">
+        <div class="flex items-center border-b-2 border-orange-500 pb-2">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search Alexandria..." 
+                class="w-full px-2 py-1 focus:outline-none"
+            />
+            <button id="searchButton" class="ml-2 text-orange-500 hover:text-orange-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
+        </div>
+        <div id="searchResults" class="mt-2 max-h-60 overflow-y-auto"></div>
+    </div>
+    
+    
+        <!-- Hero Section -->
+        <section class="relative bg-[#326964] text-white min-h-[50vh] flex items-center justify-center -mt-[80px] pt-[80px]">
+            <div class="absolute inset-0 opacity-40"></div>
+            <div class="container mx-auto px-6 relative z-10 text-center fade-in">
+                <h1 class="playfair text-4xl md:text-5xl font-bold mb-4">Discover Alexandria</h1>
+                <p class="text-xl mb-8 max-w-2xl mx-auto text-yellow-500">The Soul of the Mediterranean in Your Hands.</p>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Our Story</h2>
+                        <p>We are four passionate college students from Alexandria, Egypt, united by a shared vision—to create a special website dedicated to our beloved city. Our name "Alexplore"
+                            combines "Alexandria" and "Explore"—a perfect reflection of our mission to guide you through the heart of our city.
+                             Our goal is to showcase Alexandria’s rich history, vibrant culture, and hidden gems while connecting locals and visitors with the best experiences
+                              the city has to offer. From historical landmarks to modern hotspots, we want to build a digital hub that celebrates Alexandria’s unique charm. Through 
+                              this project, we hope to inspire pride in our community and make it easier for everyone to explore and fall in love with our coastal gem. Join us on this journey as we bring Alexandria to the world, one click at a time!</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h3>1+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>5+</h3>
+                                <p>Projects Completed</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>4</h3>
+                                <p>Team Members</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Our Team">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose Us</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Innovation</h3>
+                        <p>We push boundaries to showcase Alexandria in fresh, digital ways - blending history with modern technology</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Quality</h3>
+                        <p>Excellence drives our work as we curate authentic experiences of our city's culture and hidden gems</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Teamwork</h3>
+                        <p>Our collaboration as Alexandrian students fuels this passion project to celebrate our hometown</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Growth</h3>
+                        <p>We're growing Alexandria's digital presence to connect more people with our coastal gem</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="team">
+            <div class="container">
+                <h2>Our Team</h2>
+                <div class="team-grid">
+                    <!-- Team Member 1 -->
+                    <div class="team-member">
+                        <img src="photos/verina.jpg" alt="Team Member">
+                        <h3>Verina </h3>
+                        <p>CEO & Founder</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+
+                       <div class="team-member">
+                        <img src="photos/habiba2.jpg" alt="Team Member">
+                        <h3>Habiba</h3>
+                        <p>Lead Developer</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                  
+                    
+                    <!-- Team Member 3 -->
+                 
+                      <div class="team-member">
+                        <img src="photos/menna.jpg" alt="Team Member">
+                        <h3>Menna</h3>
+                        <p>CTO</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <!-- Team Member 4 (New) -->
+                    <div class="team-member">
+                        <img src="photos/mohamed.jpg">
+                        <h3>mohamed</h3>
+                        <p>Marketing Director</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Working with this team has been an absolute pleasure. Their innovative solutions have transformed our business.</p>
+                        </div>
+                        <div class="client">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Client">
+                            <div class="client-info">
+                                <h4>Emily Davis</h4>
+                                <p>CEO, TechStart</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>The level of professionalism and expertise is unmatched. Highly recommended!</p>
+                        </div>
+                        <div class="client">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Client">
+                            <div class="client-info">
+                                <h4>David Wilson</h4>
+                                <p>Director, InnovateCo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="playfair text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions? Our travel experts are here to help</p>
+            </div>
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div class="slide-in" style="animation-delay: 0.2s;">
+                    <h3 class="playfair text-xl font-bold text-gray-800 mb-4">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-yellow-500 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Address</h4>
+                                <p class="text-gray-600">123 Corniche Street, Alexandria, Egypt</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-yellow-500 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Phone</h4>
+                                <p class="text-gray-600">+20 3 1234567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-yellow-500 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Email</h4>
+                                <p class="text-gray-600">info@alexandriatravel.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="slide-in" style="animation-delay: 0.4s;">
+                    <h3 class="playfair text-xl font-bold text-gray-800 mb-4">Send a Message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-lg transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Enlarged Footer -->
+<footer class="bg-[#326964] text-white py-16">
+<div class="container mx-auto px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div class="space-y-4">
+            <h3 class="playfair text-3xl font-bold font-[Greek-Freak]">Alexplore</h3>
+            <p class="text-lg opacity-90 text-yellow-500">The Soul of the Mediterranean in Your Hands.</p>
+        </div>
+        
+        <div class="space-y-5">
+            <h4 class="font-semibold text-xl">Quick Links</h4>
+            <ul class="space-y-3 text-lg">
+                <li><a href="packages.html" class="hover:text-yellow-500 transition duration-300">Packages</a></li>
+                <li><a href="booking.html" class="hover:text-yellow-500 transition duration-300">Custom Trips</a></li>
+                <li><a href="#contact" class="hover:text-yellow-500 transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="space-y-5">
+            <h4 class="font-semibold text-xl">Support</h4>
+            <ul class="space-y-3 text-lg">
+                <li><a href="#" class="hover:text-yellow-500 transition duration-300">FAQs</a></li>
+                <li><a href="#" class="hover:text-yellow-500 transition duration-300">Terms & Conditions</a></li>
+                <li><a href="#" class="hover:text-yellow-500 transition duration-300">Privacy Policy</a></li>
+            </ul>
+        </div>
+        
+        <div class="space-y-5">
+            <h4 class="font-semibold text-xl">Follow Us</h4>
+            <div class="flex space-x-5 text-2xl">
+                <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="border-t border-white/20 mt-12 pt-8 text-center text-lg">
+        <p>&copy; 2025 Alexplore. All rights reserved.</p>
+    </div>
+</div>
+</footer>
+    <script src="script.js"></script>
+</body>
+</html> 
