@@ -26,59 +26,66 @@
 </head>
 <body class="overflow-x-hidden">
     <main>
-       <!-- Navbar -->
+ <!-- Navbar -->
 <header id="navbar" class="fixed top-0 left-0 w-full flex justify-between items-center p-4 transition-colors duration-300 z-50 bg-white/10 backdrop-blur">
     <div class="flex items-center">
-        
-        
-        <!-- Fixed Dropdown beside "Alexplore" -->
-        <div class="relative">
-            <button id="dropdown-button" class="text-white text-2xl hover:text-yellow-500 transition-colors left-5">
+        <!-- Dropdown Menu Button -->
+        <div class="relative mr-4">
+            <button id="dropdown-button" class="text-white text-2xl hover:text-yellow-500 transition-colors">
                 <i class="fas fa-bars"></i>
             </button>
-            <div id="dropdown-menu" class="hidden absolute top-full left-0 bg-white shadow-lg rounded-md min-w-[180px] z-50 animate__animated animate__fadeIn">
+            <div id="dropdown-menu" class="hidden absolute top-full left-0 bg-white shadow-lg rounded-md min-w-[180px] z-50 mt-2">
                 <a href="index.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Home</a>
                 <a href="aboutus.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">About Us</a>
                 <a href="#contact" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Contact Us</a>
-                <a href="login.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Login</a>
-                <a href="destinations.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors"> Destinations </a>
-                <a href="hotels.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Hotels & resturants</a>
+                <a href="login.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Login & Register</a>
+                <a href="destinations.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Destinations</a>
+                <a href="hotels.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Hotels & restaurants</a>
                 <a href="packages.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Packages</a>
-                <a href="activites.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Activities & hidden grems</a>
-                
+                <a href="activites.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Activities & hidden gems</a>
             </div>
         </div>
-        <span class="text-white text-4xl font-bold mr-4 font-[Greek-Freak] animate__animated animate__fadeInDown ml-4">Alexplore</span>
+        <a href="index.html">
+        <span class="text-white text-4xl font-bold font-[Greek-Freak]">Alexplore</span></a>
     </div>
 
+    <!-- Desktop Navigation -->
     <nav class="hidden md:flex space-x-6 text-lg">
-        <a href="index.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Home</a>
-        <a href="aboutus.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">About Us</a>
-        <a href="#contact" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Contact Us</a>
-        <a href="packages.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Packages</a>
+        <a href="index.html" class="text-white hover:text-yellow-500 transition-colors font-bold">Home</a>
+        <a href="aboutus.html" class="text-white hover:text-yellow-500 transition-colors font-bold">About Us</a>
+        <a href="#contact" class="text-white hover:text-yellow-500 transition-colors font-bold">Contact Us</a>
+        <a href="packages.html" class="text-white hover:text-yellow-500 transition-colors font-bold">Packages</a>
     </nav>
 
-    <div class="flex items-center gap-2"> <!-- Changed from gap-4 to gap-2 -->
-        <!-- Search Icon -->
-        <button id="searchToggle" class="text-white hover:text-yellow-500 focus:outline-none px-2"> <!-- Added px-2 -->
+    <!-- Right Side Icons -->
+    <div class="flex items-center gap-2">
+        <button id="searchToggle" class="text-white hover:text-yellow-500 focus:outline-none px-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
         </button>
-        
-        <!-- Account Icon -->
-        <a href="login.html" class="text-white hover:text-yellow-500 transition-colors px-2"> <!-- Added px-2 -->
-            <i class="fa-solid fa-user text-xl"></i> <!-- Added explicit text-xl -->
+        <a href="login.html" class="text-white hover:text-yellow-500 transition-colors px-2">
+            <i class="fa-solid fa-user text-xl"></i>
         </a>
-        
-        <!-- Booking Button -->
         <a href="booking.html">
-            <button class="bg-yellow-500 text-white px-3 py-1.5 rounded-lg hover:bg-yellow-600 transition-colors text-base font-bold"> <!-- Reduced padding and font size -->
+            <button class="bg-yellow-500 text-white px-3 py-1.5 rounded-lg hover:bg-yellow-600 transition-colors text-base font-bold">
                 Booking
             </button>
         </a>
     </div>
 </header>
+
+<!-- Search Card -->
+<div id="searchCard" class="hidden fixed top-20 right-4 bg-white p-4 rounded-lg shadow-lg z-50 w-96">
+    <div class="flex">
+        <input id="searchInput" type="text" placeholder="Search..." class="flex-grow px-4 py-2 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+        <button id="searchButton" class="bg-yellow-500 text-white px-4 py-2 rounded-r-lg hover:bg-yellow-600 transition-colors">
+            Search
+        </button>
+    </div>
+    <div id="searchResults" class="mt-2"></div>
+</div>
+    
 
          <!-- Hero Section -->
     <section class="relative h-screen w-full overflow-hidden">
