@@ -23,3 +23,50 @@
     font-style: normal;
     font-display: swap; /* Ensures text remains visible during load */
   }
+
+  /* Base styles (applies to all screens) */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+    .max-w-md {
+        max-width: 90%;
+    }
+}
+
+/* Laptop (1024px and up) */
+@media (min-width: 1024px) {
+    .max-w-md {
+        max-width: 800px;
+    }
+}
+
+/* Mobile (below 768px) */
+@media (max-width: 767px) {
+    .p-8 {
+        padding: 1.5rem;
+    }
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+    button, input, select {
+        width: 100%;
+    }
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width: 640px) {
+    #booking-modal .max-w-md {
+        width: 95%;
+        margin: 0 auto;
+    }
+}

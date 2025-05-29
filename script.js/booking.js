@@ -1,165 +1,137 @@
-// package select in form
-document.getElementById('package-select').addEventListener('change', function() {
+document.addEventListener('DOMContentLoaded', function() {
+    // Package selection in form
+    const packageSelect = document.getElementById('package-select');
     const customContainer = document.getElementById('custom-package-container');
-    if (this.value === 'custom') {
-        customContainer.classList.remove('hidden');
-        document.getElementById('modal-total').textContent = '$0';
-    } else {
-        customContainer.classList.add('hidden');
-        // Update price based on selection (example logic)
-        const prices = {
-            'alexandria-highlights': 120,
-            'mediterranean-cruise': 250,
-            'historical-wonders': 180
-        };
-        if (prices[this.value]) {
-            document.getElementById('modal-total').textContent = '$' + prices[this.value];
-        }
+    const modalTotal = document.getElementById('modal-total');
+    const customPriceInput = document.getElementById('custom-price');
+
+    if (packageSelect) {
+        packageSelect.addEventListener('change', function() {
+            if (this.value === 'custom') {
+                customContainer.classList.remove('hidden');
+                modalTotal.textContent = '$0';
+            } else {
+                customContainer.classList.add('hidden');
+                // Extract price from option text (format: "Package Name ($XXX)")
+                const priceMatch = this.options[this.selectedIndex].text.match(/\$([\d,]+)/);
+                const price = priceMatch ? priceMatch[1].replace(',', '') : '0';
+                modalTotal.textContent = '$' + price;
+            }
+        });
     }
-});
 
-document.getElementById('custom-price')?.addEventListener('input', function() {
-    if (document.getElementById('package-select').value === 'custom') {
-        document.getElementById('modal-total').textContent = '$' + (this.value || '0');
+    if (customPriceInput) {
+        customPriceInput.addEventListener('input', function() {
+            if (packageSelect && packageSelect.value === 'custom') {
+                modalTotal.textContent = '$' + (this.value || '0');
+            }
+        });
     }
-});
 
-
-    document.addEventListener('DOMContentLoaded', function() {
-        // Package booking buttons
-        const packageButtons = document.querySelectorAll('.package-book');
-        const bookingModal = document.getElementById('booking-modal');
-        const closeModal = document.getElementById('close-modal');
-        const packageIdInput = document.getElementById('package-id');
-        const packagePriceInput = document.getElementById('package-price');
-        const modalTotal = document.getElementById('modal-total');
-        
+    // Package booking buttons and modal
+    const packageButtons = document.querySelectorAll('.package-book');
+    const bookingModal = document.getElementById('booking-modal');
+    const closeModal = document.getElementById('close-modal');
+    const packageIdInput = document.getElementById('package-id');
+    const packagePriceInput = document.getElementById('package-price');
+    
+    if (packageButtons.length && bookingModal) {
         packageButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const packageId = this.getAttribute('data-package');
                 const packagePrice = this.getAttribute('data-price');
                 
-                packageIdInput.value = packageId;
-                packagePriceInput.value = packagePrice;
-                modalTotal.textContent = `$${packagePrice}`;
+                if (packageIdInput) packageIdInput.value = packageId;
+                if (packagePriceInput) packagePriceInput.value = packagePrice;
+                if (modalTotal) modalTotal.textContent = `$${packagePrice}`;
                 
                 bookingModal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
             });
         });
-        
+    }
+
+    if (closeModal) {
         closeModal.addEventListener('click', function() {
-            bookingModal.classList.add('hidden');
+            if (bookingModal) bookingModal.classList.add('hidden');
             document.body.style.overflow = 'auto';
         });
+    }
+});
+
+      // Custom package builder
+     // Toggle dropdowns
+    function toggleDropdown(type) {
+        const dropdown = document.getElementById(`${type}-dropdown`);
+        const toggle = document.querySelector(`#${type}-dropdown`).previousElementSibling.querySelector('i');
         
-        // Custom package builder
-        const activityCheckboxes = document.querySelectorAll('.activity-checkbox');
-        const customBookBtn = document.getElementById('custom-book-btn');
-        const selectedActivitiesDiv = document.getElementById('selected-activities');
-        const subtotalSpan = document.getElementById('subtotal');
-        const serviceFeeSpan = document.getElementById('service-fee');
-        const totalPriceSpan = document.getElementById('total-price');
-        
-        activityCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', updateCustomPackage);
-        });
-        
-        function updateCustomPackage() {
-            let selected = [];
-            let subtotal = 0;
+        dropdown.classList.toggle('hidden');
+        toggle.classList.toggle('rotate-180');
+    }
+    
+    // Track selected items and calculate total
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const selectedItemsContainer = document.getElementById('selected-items');
+    const emptyMessage = document.getElementById('empty-message');
+    const subtotalElement = document.getElementById('subtotal');
+    const serviceFeeElement = document.getElementById('service-fee');
+    const totalElement = document.getElementById('total');
+    const bookButton = document.getElementById('book-button');
+    
+    let selectedItems = [];
+    let subtotal = 0;
+    
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const name = this.getAttribute('data-name');
+            const price = parseInt(this.getAttribute('data-price'));
             
-            activityCheckboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    const activity = checkbox.getAttribute('data-activity');
-                    const price = parseFloat(checkbox.getAttribute('data-price'));
-                    subtotal += price;
-                    
-                    let activityName = '';
-                    switch(activity) {
-                        case 'city-tour': activityName = 'City Highlights Tour'; break;
-                        case 'sunset-cruise': activityName = 'Sunset Cruise'; break;
-                        case 'historical-tour': activityName = 'Historical Sites Tour'; break;
-                        case 'food-tour': activityName = 'Food Tour'; break;
-                    }
-                    
-                    selected.push({
-                        name: activityName,
-                        price: price
-                    });
-                }
-            });
-            
-            // Update UI
-            if (selected.length > 0) {
-                let html = '';
-                selected.forEach(item => {
-                    html += `<div class="flex justify-between py-2 border-b border-gray-200">
-                                <span>${item.name}</span>
-                                <span class="font-semibold">$${item.price}</span>
-                            </div>`;
-                });
-                selectedActivitiesDiv.innerHTML = html;
-                customBookBtn.disabled = false;
+            if (this.checked) {
+                selectedItems.push({ name, price });
             } else {
-                selectedActivitiesDiv.innerHTML = '<p class="text-gray-600">No activities selected yet</p>';
-                customBookBtn.disabled = true;
+                selectedItems = selectedItems.filter(item => item.name !== name);
             }
             
-            const serviceFee = subtotal * 0.1; // 10% service fee
-            const total = subtotal + serviceFee;
+            updateSummary();
+        });
+    });
+    
+    function updateSummary() {
+        // Calculate subtotal
+        subtotal = selectedItems.reduce((sum, item) => sum + item.price, 0);
+        
+        // Calculate service fee (10% of subtotal)
+        const serviceFee = Math.round(subtotal * 0.1);
+        
+        // Update UI
+        if (selectedItems.length > 0) {
+            emptyMessage.style.display = 'none';
             
-            subtotalSpan.textContent = `$${subtotal.toFixed(2)}`;
-            serviceFeeSpan.textContent = `$${serviceFee.toFixed(2)}`;
-            totalPriceSpan.textContent = `$${total.toFixed(2)}`;
+            let itemsHTML = '';
+            selectedItems.forEach(item => {
+                itemsHTML += `
+                    <div class="flex justify-between py-2 border-b">
+                        <span>${item.name}</span>
+                        <span>$${item.price}</span>
+                    </div>
+                `;
+            });
+            selectedItemsContainer.innerHTML = itemsHTML;
+            
+            bookButton.disabled = false;
+        } else {
+            emptyMessage.style.display = 'block';
+            selectedItemsContainer.innerHTML = '';
+            bookButton.disabled = true;
         }
         
-        // Custom package booking
-        customBookBtn.addEventListener('click', function() {
-            const total = totalPriceSpan.textContent;
-            modalTotal.textContent = total;
-            
-            packageIdInput.value = 'CUSTOM';
-            packagePriceInput.value = total.replace('$', '');
-            
-            bookingModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        });
-        
-        // Form submission
-        const bookingForm = document.getElementById('booking-form');
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Here you would typically send the data to your server
-            const packageId = packageIdInput.value;
-            const packagePrice = packagePriceInput.value;
-            const formData = new FormData(this);
-            
-            // Simulate successful booking
-            bookingModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-            
-            alert(`Thank you for booking ${packageId}! A confirmation has been sent to your email.`);
-            this.reset();
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-      
+        subtotalElement.textContent = `$${subtotal}`;
+        serviceFeeElement.textContent = `$${serviceFee}`;
+        totalElement.textContent = `$${subtotal + serviceFee}`;
+    }
+    
+    // Book button functionality
+    bookButton.addEventListener('click', function() {
+        alert('Your custom package has been booked! Total: $' + (subtotal + Math.round(subtotal * 0.1)));
+        // Here you would typically send the data to your backend
     });

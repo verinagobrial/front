@@ -30,6 +30,52 @@
     font-display: swap; /* Ensures text remains visible during load */
   }
   
+  /* Base styles (applies to all screens) */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+    .max-w-md {
+        max-width: 90%;
+    }
+}
+
+/* Laptop (1024px and up) */
+@media (min-width: 1024px) {
+    .max-w-md {
+        max-width: 800px;
+    }
+}
+
+/* Mobile (below 768px) */
+@media (max-width: 767px) {
+    .p-8 {
+        padding: 1.5rem;
+    }
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+    button, input, select {
+        width: 100%;
+    }
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width: 640px) {
+    #booking-modal .max-w-md {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
 </style>
 </head>
 <body class="overflow-x-hidden">
@@ -45,7 +91,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div id="dropdown-menu" class="hidden absolute top-full left-0 bg-white shadow-lg rounded-md min-w-[180px] z-50 animate__animated animate__fadeIn">
-                <a href="home.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Home</a>
+                <a href="index.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Home</a>
                 <a href="aboutus.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">About Us</a>
                 <a href="#contact" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Contact Us</a>
                 <a href="login.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Login</a>
@@ -61,7 +107,7 @@
 
     
         <nav class="hidden md:flex space-x-6 text-lg">
-            <a href="home.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Home</a>
+            <a href="index.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Home</a>
             <a href="aboutus.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">About Us</a>
             <a href="#contact" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Contact Us</a>
             <a href="packages.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Packages</a>
@@ -127,17 +173,17 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Place 1 -->
             <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="content/Antiquities and museums/Sunken Antiquities/11.jpeg" 
+                <img src="photos/alexandria-national-museum-1.jpg" 
                      alt="Sunken Antiquities" 
                      class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                    <h3 class="text-white playfair text-2xl font-bold text-center px-4">Sunken Antiquities</h3>
+                    <h3 class="text-white playfair text-2xl font-bold text-center px-4">Alexandria national museum</h3>
                 </div>
             </div>
 
             <!-- Place 2 -->
             <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="content/Antiquities and museums/Shatby Cemetery/1.jpg" 
+                <img src="photos/shatby cemetery.jpg" 
                      alt="Shatby Cemetery" 
                      class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -147,7 +193,7 @@
 
             <!-- Place 3 -->
             <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="content/Antiquities and museums/The Anfoushi Cemetery/1.jpg" 
+                <img src="photos/1anfoushi.jpg" 
                      alt="The Anfoushi Cemetery" 
                      class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -157,7 +203,7 @@
 
             <!-- Place 4 -->
             <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="content/Antiquities and museums/Aquarium Museum and Institute/1.jpg" 
+                <img src="photos/aquarium museum.jpg" 
                      alt="Aquarium Museum and Institute" 
                      class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -167,7 +213,7 @@
 
             <!-- Place 5 -->
             <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="content/Antiquities and museums/The Kom el-Shuqafa Necropolis/11.jpeg" 
+                <img src="photos/Catacombs-of-Kom-el-Shoqafa-askaladdin.webp" 
                      alt="The Kom el-Shuqafa Necropolis" 
                      class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -187,7 +233,7 @@
 
             <!-- Place 7 -->
             <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="content/Antiquities and museums/Museum of Fine Arts/1.jpg" 
+                <img src="photos/museum fine.jpg" 
                      alt="Museum of Fine Arts" 
                      class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -197,7 +243,7 @@
 
             <!-- Place 8 -->
             <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="content/Antiquities and museums/Antoniadis Gardens/1.jpg" 
+                <img src="photos/antoniads.jpg2.jpeg" 
                      alt="Antoniadis Gardens" 
                      class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -207,7 +253,7 @@
 
             <!-- Place 9 -->
             <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="content/cultural tourism/Library of Alexandria/1.png" 
+                <img src="photos/1.png" 
                      alt="Library of Alexandria" 
                      class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -217,7 +263,7 @@
 
             <!-- Place 10 -->
             <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="content/Antiquities and museums/Mahmoud Said Museum Complex/Mahmoud-Said.jpg" 
+                <img src="photos/Mahmoud-Said-Museum-webp.jpg" 
                      alt="Mahmoud Said Museum " 
                      class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -227,7 +273,7 @@
 
             <!-- Place 11 -->
             <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="content/religious tourism/Eliahu Hanavi Synagogue/1.jpg" 
+                <img src="photos/eliahu hanavi.jpg" 
                      alt="Eliahu Hanavi Synagogue" 
                      class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -237,7 +283,7 @@
 
             <!-- Place 12 -->
             <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="content/religious tourism/Commander Ibrahim Mosque/1.jpg" 
+                <img src="photos/ibrahim mosque.jpg" 
                      alt="Commander Ibrahim Mosque" 
                      class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">

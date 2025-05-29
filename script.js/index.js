@@ -261,14 +261,14 @@ document.addEventListener('DOMContentLoaded', function() {
    // Image arrays for each slideshow (add your 3 image paths for each)
     const slideshowImages = {
         slideshow1: [
-            "content/Antiquities and museums/Qaitbay Fort/1678607223.jpg",
+            "photos/1678607223.jpg",
             "photos/lighthouse.jpeg",
             "photos/Pompey’s Pillar In Alexandria And The Intriguing Secrets Below It!.jpeg"
         ],
         slideshow2: [
             "photos/Alexandria Library Egypt.jpeg",
             "photos/Alexandria Opera house.jpeg",
-            "photos/11 things to do in Alexandria, Egypt - one is a bit weird!.jpeg"
+            "photos/1.jpeg"
         ],
         slideshow3: [
             "photos/synagogue.jpeg",
@@ -291,3 +291,73 @@ document.addEventListener('DOMContentLoaded', function() {
         // Change image every second (1000 milliseconds)
         setInterval(changeImage, 1000);
     });
+
+
+    // Automatic Photo Slider
+document.addEventListener('DOMContentLoaded', function() {
+    const sliderImages = [
+        'photos/Alexandria _ Egypt.jpeg',
+        'photos/5b6b4fa9-29a8-4d3a-bdb0-5f8a08931145.jpeg',
+        'photos/5a3f8bd6af00ae4d65ee38f47051f368.jpg',
+        'photos/65e4d4bf-7de5-412c-b379-fe684a934c89.jpeg',
+        'photos/55.jpg',
+        'photos/9.jpg',
+        'photos/b1e244e6-8b55-49d8-b849-833330ed6af6.jpeg',
+        'photos/b94630d732490f4fa15a61d13a2651d3.jpg',
+        'photos/alex street.jpeg',
+        'photos/Alex.jpeg',
+        'photos/bridge.jpeg',
+        'photos/stanly.jpeg'
+    ];
+
+    const sliderTrack = document.getElementById('autoSlider');
+    
+    // Duplicate images to create seamless loop
+    const duplicatedImages = [...sliderImages, ...sliderImages];
+    
+    // Add images to the slider track
+    duplicatedImages.forEach(imgUrl => {
+        const slide = document.createElement('div');
+        slide.className = 'slider-item';
+        slide.innerHTML = `<img src="${imgUrl}" alt="Travel photo">`;
+        sliderTrack.appendChild(slide);
+    });
+    
+    let currentPosition = 0;
+    const slideWidth = 300; // Should match CSS width
+    const totalSlides = sliderImages.length;
+    let animationId;
+    let speed = 1; // Pixels to move per frame (adjust for speed)
+    
+    function animateSlider() {
+        currentPosition -= speed;
+        
+        // When we've scrolled through all original images, reset position seamlessly
+        if (currentPosition <= -slideWidth * totalSlides) {
+            currentPosition = 0;
+            // Jump back without animation
+            sliderTrack.style.transition = 'none';
+            sliderTrack.style.transform = `translateX(${currentPosition}px)`;
+            // Force reflow to apply the immediate change
+            void sliderTrack.offsetWidth;
+            // Restore transition
+            sliderTrack.style.transition = 'transform 0.5s ease-in-out';
+        }
+        
+        sliderTrack.style.transform = `translateX(${currentPosition}px)`;
+        animationId = requestAnimationFrame(animateSlider);
+    }
+    
+    // Start the animation
+    animateSlider();
+    
+    // Pause on hover for better user experience
+    const container = document.querySelector('.slider-container');
+    container.addEventListener('mouseenter', () => {
+        cancelAnimationFrame(animationId);
+    });
+    
+    container.addEventListener('mouseleave', () => {
+        animateSlider();
+    });
+});

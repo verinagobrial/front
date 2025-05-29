@@ -39,7 +39,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div id="dropdown-menu" class="hidden absolute top-full left-0 bg-white shadow-lg rounded-md min-w-[180px] z-50 animate__animated animate__fadeIn">
-                <a href="home.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Home</a>
+                <a href="index.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Home</a>
                 <a href="aboutus.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">About Us</a>
                 <a href="#contact" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Contact Us</a>
                 <a href="login.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Login</a>
@@ -55,7 +55,7 @@
 
 
     <nav class="hidden md:flex space-x-6 text-lg">
-        <a href="home.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Home</a>
+        <a href="index.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Home</a>
         <a href="aboutus.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">About Us</a>
         <a href="#contact" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Contact Us</a>
         <a href="packages.html" class="text-white hover:text-yellow-500 transition-colors font-bold animate__animated animate__fadeInDown animate__delay-1s">Packages</a>
@@ -116,7 +116,7 @@
 
     <section class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl my-8">
         <div class="p-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6">Book Your Package</h2>
+            <h2 class="text-2xl font-bold text-yellow-500 mb-6">Book Your Package</h2>
             
             <form id="booking-form">
                 <input type="hidden" id="package-id">
@@ -128,9 +128,14 @@
                     <div class="relative">
                         <select class="w-full px-4 py-2 border rounded-lg focus:ring-yellow-500 focus:border-yellow-500 appearance-none" id="package-select">
                             <option value="">Choose a package...</option>
-                            <option value="alexandria-highlights">Alexandria Highlights Tour ($120)</option>
-                            <option value="mediterranean-cruise">Mediterranean Cruise ($250)</option>
-                            <option value="historical-wonders">Historical Wonders Package ($180)</option>
+                            <option value="alexandria-highlights">Historical & Cultural Tour Package ($1,200)</option>
+                            <option value="mediterranean-cruise">Family-Friendly Tour Package ($700)</option>
+                            <option value="historical-wonders">Historical & Cultural Tour Package($1,500)</option>
+                            <option value="historical-wonders">Mediterranean Beach Relaxation Tour Package ($800)</option>
+                            <option value="historical-wonders">Beach & Relaxation Tour Package ($1,800)</option>
+                            <option value="historical-wonders">Alexandria Tourism Tour Package ($3000)</option>
+                            <option value="historical-wonders">Family-Friendly Adventure Tour Package ($2000)</option>
+                            <option value="historical-wonders">  Advanture Tour Package ($3,500)</option>
                             <option value="custom">Custom Package (Enter details below)</option>
                         </select>
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -177,109 +182,203 @@
             </form>
         </div>
     </section>
-    
-    <!-- Custom Package Builder -->
-    <section id="custom" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="playfair text-3xl font-bold text-gray-800 mb-4">Build Your Custom Package</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Tailor your perfect Alexandria experience with our custom trip builder</p>
-               
-            </div>
-    
-            <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto slide-in">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Left Column - Options -->
-                    <div>
-                        <h3 class="playfair text-xl font-bold text-gray-800 mb-6">Select Your Activities</h3>
-                        
-                        <!-- Activity 1 -->
-                        <div class="mb-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-yellow-500 activity-checkbox" 
-                                           data-activity="city-tour" data-price="85">
-                                    <span class="ml-3 font-medium">City Highlights Tour</span>
-                                </label>
-                                <span class="text-yellow-500 font-semibold">$85</span>
-                            </div>
-                            <p class="text-gray-600 text-sm ml-8">Visit major landmarks including Bibliotheca Alexandrina and Qaitbay Citadel</p>
+
+    <!-- custom package -->
+<div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold text-center mb-6 text-yellow-500">Build Your Custom Package</h1>
+    <p class="text-center text-gray-600 mb-8">Tailor your perfect Alexandria experience with our custom trip builder</p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Selection Column -->
+        <div>
+            <h2 class="text-2xl font-semibold mb-4 text-yellow-500">Select Your Options</h2>
+            
+            <!-- Destinations Dropdown -->
+            <div class="mb-6">
+                <button onclick="toggleDropdown('destinations')" class="dropdown-toggle w-full flex justify-between items-center p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition">
+                    <span class="font-medium">Destinations</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div id="destinations-dropdown" class="dropdown-content hidden mt-2 border rounded-lg overflow-hidden">
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="destination1" class="mr-3" data-price="85" data-name="Bibliotheca Alexandrina">
+                            <label for="destination1" class="cursor-pointer">Bibliotheca Alexandrina</label>
                         </div>
-                        
-                        <!-- Activity 2 -->
-                        <div class="mb-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-yellow-500 activity-checkbox" 
-                                           data-activity="sunset-cruise" data-price="120">
-                                    <span class="ml-3 font-medium">Sunset Cruise</span>
-                                </label>
-                                <span class="text-yellow-500 font-semibold">$120</span>
-                            </div>
-                            <p class="text-gray-600 text-sm ml-8">Evening cruise with dinner and live music</p>
-                        </div>
-                        
-                        <!-- Activity 3 -->
-                        <div class="mb-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-yellow-500 activity-checkbox" 
-                                           data-activity="historical-tour" data-price="95">
-                                    <span class="ml-3 font-medium">Historical Sites Tour</span>
-                                </label>
-                                <span class="text-yellow-500 font-semibold">$95</span>
-                            </div>
-                            <p class="text-gray-600 text-sm ml-8">Explore ancient sites like Pompey's Pillar and Kom El Shoqafa</p>
-                        </div>
-                        
-                        <!-- Activity 4 -->
-                        <div class="mb-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-yellow-500 activity-checkbox" 
-                                           data-activity="food-tour" data-price="65">
-                                    <span class="ml-3 font-medium">Food Tour</span>
-                                </label>
-                                <span class="text-yellow-500 font-semibold">$65</span>
-                            </div>
-                            <p class="text-gray-600 text-sm ml-8">Sample authentic Egyptian cuisine at local eateries</p>
-                        </div>
+                        <span class="font-medium">$85</span>
                     </div>
-                    
-                    <!-- Right Column - Summary -->
-                    <div>
-                        <h3 class="playfair text-xl font-bold text-gray-800 mb-6">Your Custom Package</h3>
-                        
-                        <div class="bg-yellow-50 rounded-lg p-6 mb-6">
-                            <div id="selected-activities" class="mb-4">
-                                <p class="text-gray-600">No activities selected yet</p>
-                            </div>
-                            
-                            <div class="border-t border-gray-200 pt-4">
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">Subtotal:</span>
-                                    <span id="subtotal" class="font-semibold">$0</span>
-                                </div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">Service Fee:</span>
-                                    <span id="service-fee" class="font-semibold">$0</span>
-                                </div>
-                                <div class="flex justify-between text-lg font-bold">
-                                    <span>Total:</span>
-                                    <span id="total-price" class="text-yellow-500">$0</span>
-                                </div>
-                            </div>
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="destination2" class="mr-3" data-price="75" data-name="Qaitbay Citadel">
+                            <label for="destination2" class="cursor-pointer">Qaitbay Citadel</label>
                         </div>
-                        
-                        <button id="custom-book-btn" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50" disabled>
-                            Book Custom Package
-                        </button>
+                        <span class="font-medium">$75</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="destination3" class="mr-3" data-price="65" data-name="Pompey's Pillar">
+                            <label for="destination3" class="cursor-pointer">Pompey's Pillar</label>
+                        </div>
+                        <span class="font-medium">$65</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hotels Dropdown -->
+            <div class="mb-6">
+                <button onclick="toggleDropdown('hotels')" class="dropdown-toggle w-full flex justify-between items-center p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition">
+                    <span class="font-medium">Hotels</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div id="hotels-dropdown" class="dropdown-content hidden mt-2 border rounded-lg overflow-hidden">
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="hotel1" class="mr-3" data-price="150" data-name="Four Seasons San Stefano">
+                            <label for="hotel1" class="cursor-pointer">Four Seasons San Stefano</label>
+                        </div>
+                        <span class="font-medium">$150/night</span>
+                    </div>
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="hotel2" class="mr-3" data-price="120" data-name="Hilton Green Plaza">
+                            <label for="hotel2" class="cursor-pointer">Hilton Green Plaza</label>
+                        </div>
+                        <span class="font-medium">$120/night</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="hotel3" class="mr-3" data-price="90" data-name="Sheraton Montazah">
+                            <label for="hotel3" class="cursor-pointer">Sheraton Montazah</label>
+                        </div>
+                        <span class="font-medium">$90/night</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurants Dropdown -->
+            <div class="mb-6">
+                <button onclick="toggleDropdown('restaurants')" class="dropdown-toggle w-full flex justify-between items-center p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition">
+                    <span class="font-medium">Restaurants</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div id="restaurants-dropdown" class="dropdown-content hidden mt-2 border rounded-lg overflow-hidden">
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="restaurant1" class="mr-3" data-price="50" data-name="Byblos Restaurant">
+                            <label for="restaurant1" class="cursor-pointer">Trianon resturant</label>
+                        </div>
+                        <span class="font-medium">$50/person</span>
+                    </div>
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="restaurant2" class="mr-3" data-price="40" data-name="Fish Market">
+                            <label for="restaurant2" class="cursor-pointer">Delices resturant</label>
+                        </div>
+                        <span class="font-medium">$40/person</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="restaurant3" class="mr-3" data-price="30" data-name="Balbaa Village">
+                            <label for="restaurant3" class="cursor-pointer">Lamma resturant</label>
+                        </div>
+                        <span class="font-medium">$30/person</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activities Dropdown -->
+            <div class="mb-6">
+                <button onclick="toggleDropdown('activities')" class="dropdown-toggle w-full flex justify-between items-center p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition">
+                    <span class="font-medium">Activities</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div id="activities-dropdown" class="dropdown-content hidden mt-2 border rounded-lg overflow-hidden">
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="activity1" class="mr-3" data-price="120" data-name="Sunset Cruise">
+                            <label for="activity1" class="cursor-pointer">Kayak club</label>
+                        </div>
+                        <span class="font-medium">$120</span>
+                    </div>
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="activity2" class="mr-3" data-price="80" data-name="Scuba Diving">
+                            <label for="activity2" class="cursor-pointer">RootsLandscape</label>
+                        </div>
+                        <span class="font-medium">$80</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="activity3" class="mr-3" data-price="60" data-name="City Tour">
+                            <label for="activity3" class="cursor-pointer">JINJER'S</label>
+                        </div>
+                        <span class="font-medium">$60</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hidden Gems Dropdown -->
+            <div class="mb-6">
+                <button onclick="toggleDropdown('gems')" class="dropdown-toggle w-full flex justify-between items-center p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition">
+                    <span class="font-medium">Hidden Gems</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div id="gems-dropdown" class="dropdown-content hidden mt-2 border rounded-lg overflow-hidden">
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="gem1" class="mr-3" data-price="45" data-name="Sea Shell Mural Tour">
+                            <label for="gem1" class="cursor-pointer">Teatro Iskindrya</label>
+                        </div>
+                        <span class="font-medium">$45</span>
+                    </div>
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="gem2" class="mr-3" data-price="35" data-name="Local Markets Walk">
+                            <label for="gem2" class="cursor-pointer">Jeeda's</label>
+                        </div>
+                        <span class="font-medium">$35</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <input type="checkbox" id="gem3" class="mr-3" data-price="55" data-name="Coffee Tasting Experience">
+                            <label for="gem3" class="cursor-pointer">Old Street</label>
+                        </div>
+                        <span class="font-medium">$55</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    
+        
+        <!-- Summary Column -->
+        <div class="bg-gray-50 p-6 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4 text-yellow-500">Your Custom Package</h2>
+            
+            <div id="selected-items" class="mb-6">
+                <p class="text-gray-500 italic" id="empty-message">No items selected yet</p>
+                <!-- Selected items will appear here -->
+            </div>
+            
+            <div class="border-t pt-4">
+                <div class="flex justify-between mb-2">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0</span>
+                </div>
+                <div class="flex justify-between mb-2">
+                    <span>Service Fee:</span>
+                    <span id="service-fee">$0</span>
+                </div>
+                <div class="flex justify-between font-bold text-lg mt-4">
+                    <span>Total:</span>
+                    <span id="total">$0</span>
+                </div>
+            </div>
+            
+            <button id="book-button" class="w-full mt-6 bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-lg font-medium transition disabled:opacity-50" disabled>
+                Book Custom Package
+            </button>
+        </div>
+    </div>
+</div>
     <!-- Booking Modal -->
     <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
         <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 slide-in">
