@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -62,18 +61,20 @@ img, video {
         margin: 0 auto;
     }
 }
-.navbar-scrolled {
+/* .navbar-scrolled {
 background-color:#30444b;
-/* Change this to your desired scroll color */
+
 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+} */
+/* Change this to your desired scroll color */
 /* Optional: change text color if needed */
 /* color: white; */
-}
-
 /* Optional: if you want to change the logo/text color when scrolled */
-.navbar-scrolled .text-white {
-color: #f8fafc; /* Change to your desired text color */
-}
+/* .navbar-scrolled .text-white {
+color: #f8fafc; 
+} */
+/* Change to your desired text color */
 /* Add this to create a blurred overlay effect */
 body::before {
     content: "";

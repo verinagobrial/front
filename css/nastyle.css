@@ -1,19 +1,14 @@
+/* Existing navbar styles remain the same */
 .navbar-scrolled {
     background-color:#326964;
-     /* Change this to your desired scroll color */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-   /* Optional: change text color if needed */
-   /* color: white; */
-  }
-  
-  /* Optional: if you want to change the logo/text color when scrolled */
-  .navbar-scrolled .text-white {
-   color: #f8fafc; /* Change to your desired text color */
-  }
-  
-  
- /* Optional smooth transition */
- .search-card {
+}
+
+.navbar-scrolled .text-white {
+    color: #f8fafc;
+}
+
+.search-card {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .search-card.hidden {
@@ -21,5 +16,134 @@
     transform: translateY(-10px);
     pointer-events: none;
 }
-  
- 
+
+/* Responsive additions */
+@media (max-width: 768px) {
+    /* Adjust dropdown menu for mobile */
+    #dropdown-menu {
+        width: 100vw;
+        left: -16px; /* Account for padding */
+        right: 0;
+        border-radius: 0;
+        border-top: 1px solid #e5e7eb;
+    }
+    
+    /* Adjust search card position and width */
+    #searchCard {
+        width: calc(100% - 32px);
+        left: 16px;
+        right: 16px;
+        top: 80px;
+    }
+    
+    /* Better spacing for right-side icons */
+    .flex.items-center.gap-2 {
+        gap: 0.5rem;
+    }
+    
+    /* Slightly smaller logo on mobile */
+    .text-4xl {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+    }
+    
+    /* Adjust booking button size */
+    .bg-yellow-500.text-white.px-3.py-1_5 {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Even smaller logo on very small screens */
+    .text-4xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    
+    /* Adjust navbar padding */
+    header.fixed.top-0.left-0.w-full.flex.justify-between.items-center.p-4 {
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Adjust dropdown button size */
+    #dropdown-button.text-white.text-2xl {
+        font-size: 1.5rem;
+    }
+    
+    /* Adjust user icon size */
+    .fa-user.text-xl {
+        font-size: 1rem;
+    }
+    
+    /* Adjust search icon size */
+    .h-6.w-6 {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+}
+
+/* Enhanced Responsive Navbar Styles */
+@media (max-width: 1024px) {
+    /* Tablet styles */
+    header.fixed {
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .hidden.md\:flex {
+        display: none !important;
+    }
+    
+    #dropdown-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile landscape/small tablet */
+    header.fixed {
+        padding: 0.5rem 1rem;
+    }
+    
+    .text-4xl {
+        font-size: 1.5rem;
+    }
+    
+    #searchCard {
+        width: 90%;
+        left: 5%;
+        right: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile portrait */
+    .flex.items-center.gap-2 {
+        gap: 0.25rem;
+    }
+    
+    .bg-yellow-500.text-white.px-3.py-1\.5 {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    #dropdown-button.text-white.text-2xl {
+        font-size: 1.25rem;
+    }
+}
+
+/* Ensure dropdown stays visible when open */
+#dropdown-menu:not(.hidden) {
+    display: block !important;
+}
+
+/* Prevent body scrolling when menu is open */
+body.menu-open {
+    overflow: hidden;
+}
