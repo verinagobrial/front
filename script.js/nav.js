@@ -19,32 +19,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Fixed Dropdown Menu (your original code)
+    // Enhanced Dropdown Menu with responsive improvements
     const dropdownButton = document.getElementById("dropdown-button");
     const dropdownMenu = document.getElementById("dropdown-menu");
 
+    // Mobile menu toggle with animation fix
     dropdownButton.addEventListener("click", function(e) {
         e.stopPropagation();
         dropdownMenu.classList.toggle("hidden");
-        document.body.classList.toggle('menu-open'); // Added for responsive behavior
+        document.body.classList.toggle("menu-open");
+        
+        // Force reflow to prevent animation glitches
+        void dropdownMenu.offsetWidth;
     });
 
+    // Close menu when clicking outside with responsive consideration
     document.addEventListener("click", function(event) {
         if (!event.target.closest("#dropdown-button") && !dropdownMenu.classList.contains("hidden")) {
             dropdownMenu.classList.add("hidden");
-            document.body.classList.remove('menu-open'); // Added for responsive behavior
+            document.body.classList.remove("menu-open");
         }
     });
 
-    // Close menu on resize if window becomes large (added responsive behavior)
-    window.addEventListener('resize', function() {
-        if (window.innerWidth >= 1024) {
-            dropdownMenu.classList.add("hidden");
-            document.body.classList.remove('menu-open');
-        }
+    // Enhanced resize handler with debounce
+    let resizeTimer;
+    window.addEventListener("resize", function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (window.innerWidth >= 1024) {
+                dropdownMenu.classList.add("hidden");
+                document.body.classList.remove("menu-open");
+            }
+            // Reset any inline styles that might interfere
+            dropdownMenu.style.left = "";
+            dropdownMenu.style.right = "";
+        }, 250);
     });
 
-    // Fixed Search Functionality (your original unchanged code)
+    // Fixed Search Functionality (completely unchanged)
     const searchToggle = document.getElementById('searchToggle');
     const searchCard = document.getElementById('searchCard');
     const searchInput = document.getElementById('searchInput');

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Alexplore</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/nastyle.css">
@@ -19,483 +19,466 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-     <!-- Swiper JS -->
-     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>    
     <script src="script.js/index.js" defer></script>
     <script src="script.js/nav.js" defer></script>
     <script src="script.js/footer.js" defer></script>
-  
 </head>
 <body class="overflow-x-hidden">
     <main>
- <!-- Navbar -->
-<header id="navbar" class="fixed top-0 left-0 w-full flex justify-between items-center p-4 transition-colors duration-300 z-50 bg-white/10 backdrop-blur">
-    <div class="flex items-center">
-        <!-- Dropdown Menu Button -->
-        <div class="relative mr-4">
-            <button id="dropdown-button" class="text-white text-2xl hover:text-yellow-500 transition-colors">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div id="dropdown-menu" class="hidden absolute top-full left-0 bg-white shadow-lg rounded-md min-w-[180px] z-50 mt-2">
-                <a href="index.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Home</a>
-                <a href="aboutus.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">About Us</a>
-                <a href="#contact" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Contact Us</a>
-                <a href="login.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Login & Register</a>
-                <a href="destinations.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Destinations</a>
-                <a href="hotels.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Hotels & restaurants</a>
-                <a href="packages.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Packages</a>
-                <a href="activites.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Activities & hidden gems</a>
-            </div>
-        </div>
-        <a href="index.html">
-        <span class="text-white text-4xl font-bold font-[Greek-Freak]">Alexplore</span></a>
-    </div>
-
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex space-x-6 text-lg">
-        <a href="index.html" class="text-white hover:text-yellow-500 transition-colors font-bold">Home</a>
-        <a href="aboutus.html" class="text-white hover:text-yellow-500 transition-colors font-bold">About Us</a>
-        <a href="#contact" class="text-white hover:text-yellow-500 transition-colors font-bold">Contact Us</a>
-        <a href="packages.html" class="text-white hover:text-yellow-500 transition-colors font-bold">Packages</a>
-    </nav>
-
-    <!-- Right Side Icons -->
-    <div class="flex items-center gap-2">
-        <button id="searchToggle" class="text-white hover:text-yellow-500 focus:outline-none px-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-        </button>
-        <a href="login.html" class="text-white hover:text-yellow-500 transition-colors px-2">
-            <i class="fa-solid fa-user text-xl"></i>
-        </a>
-        <a href="booking.html">
-            <button class="bg-yellow-500 text-white px-3 py-1.5 rounded-lg hover:bg-yellow-600 transition-colors text-base font-bold">
-                Booking
-            </button>
-        </a>
-    </div>
-</header>
-
-<!-- Search Card -->
-<div id="searchCard" class="hidden fixed top-20 right-4 bg-white p-4 rounded-lg shadow-lg z-50 w-96">
-    <div class="flex">
-        <input id="searchInput" type="text" placeholder="Search..." class="flex-grow px-4 py-2 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
-        <button id="searchButton" class="bg-yellow-500 text-white px-4 py-2 rounded-r-lg hover:bg-yellow-600 transition-colors">
-            Search
-        </button>
-    </div>
-    <div id="searchResults" class="mt-2"></div>
-</div>
-    
-
-         <!-- Hero Section -->
-    <section class="relative h-screen w-full overflow-hidden">
-      <!-- Background Image with Overlay -->
-      <div class="absolute inset-0 bg-black/50 z-10"></div>
-      <div 
-          class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style="background-image: url('photos/MOBILE\ PHOTOGRAPHY\ for\ downtown-egypt\'s\ arch_\ STYLES\ -\ Ahmed\ Samy\ Elesseily.jpeg');"></div>
-      
-      <!-- Content Container -->
-      <div class="container mx-auto h-full flex items-center relative z-20 px-4">
-          <div class="max-w-2xl text-white">
-              <!-- Animated Subtitle -->
-              <h3 class="text-lg md:text-xl font-light mb-4 animate__animated animate__fadeInUp animate__delay-1s">
-                  WELCOME TO 
-              </h3>
-              
-              <!-- Main Animated Title -->
-              <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate__animated animate__fadeInUp">
-                  ALEXPLORE <span class="text-yellow-400">TRAVEL</span> WEBSITE
-              </h1>
-              
-              <!-- Animated Description -->
-              <p class="text-lg mb-8 animate__animated animate__fadeInUp animate__delay-1s">
-                         The Soul of the Mediterranean in Your Hands.
-              </p>
-              
-              <!-- Animated Button -->
-              <a href="#start">
-              <button class="px-8 py-3 bg-yellow-500 text-black font-medium rounded-md hover:bg-yellow-600 transition duration-300 animate__animated animate__fadeInUp animate__delay-2s">
-                  EXPLORE YOUR WAY
-              </button>
-              </a>
-          </div>
-      </div>
-      
-      <!-- Scrolling Indicator -->
-      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce" id="start">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-      </div>
-  </section>
-
-     <!-- Search Card -->
-     <div id="searchCard" class="search-card hidden fixed top-20 right-4 bg-white p-4 rounded-lg shadow-lg z-50 w-80">
-        <div class="flex items-center border-b-2 border-orange-500 pb-2">
-            <input 
-                type="text" 
-                id="searchInput" 
-                placeholder="Search Alexandria..." 
-                class="w-full px-2 py-1 focus:outline-none"
-            />
-            <button id="searchButton" class="ml-2 text-orange-500 hover:text-orange-700">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-            </button>
-        </div>
-        <div id="searchResults" class="mt-2 max-h-60 overflow-y-auto"></div>
-    </div>
-
- <!-- Destinations Section -->
-<div class="w-3/4 mx-auto space-y-16 py-12 ">
-    <div class="text-center mb-12 ">
-        <h2 class=" roboto-light text-4xl font-bold text-black mb-2">Most popular destinations</h2>
-         <p class="text-yellow-500 max-w-3xl mx-auto">Discover Alexandria's most beautiful landmarks and attractions</p>
-    </div>
-    <!-- Section 1 (Image Left / Text Right) -->
-    <div class="flex flex-col md:flex-row gap-8 items-center destination-item ">
-       <div class="md:w-1/2 relative">
-            <div id="slideshow1" class="w-full h-auto border-8 border-[#326964] rounded-3xl shadow-lg overflow-hidden">
-                <img src="photos/1678607223.jpg" class="w-full h-auto block">
-            </div>
-        </div>
-        <div class="md:w-1/2 slide-up">
-            <h2 class="text-3xl font-bold mb-4 text-yellow-500">Historical Legacy</h2>
-            <p class="text-black" style="text-align: justify;">
-                As a crossroads of civilizations, Alexandria's history spans Pharaonic, Ptolemaic, Roman, Byzantine, and Islamic eras. The city witnessed Cleopatra's reign, Julius Caesar's arrival, and Napoleon's campaign. Its harbor holds sunken treasures from the Ptolemaic period, while landmarks like Pompey's Pillar and the Catacombs of Kom El Shoqafa reveal layered histories. The Qaitbay Citadel stands where the ancient Lighthouse once guided Mediterranean sailors. During World War II, Alexandria played a strategic role, and its history as Egypt's gateway to Europe shaped its unique identity distinct from other Egyptian cities, making it a living museum of Mediterranean history.
-            </p>
-        </div>
-    </div>
-  
-    <!-- Section 2 (Text Left / Image Right) -->
-    <div class="flex flex-col md:flex-row-reverse gap-8 items-center destination-item">
-        <div class="md:w-1/2 relative">
-            <div id="slideshow2" class="w-full h-auto border-8 border-[#326964] rounded-3xl shadow-lg overflow-hidden">
-                <img src="photos/Alexandria Library Egypt.jpeg" class="w-full h-auto block">
-            </div>
-        </div>
-        <div class="md:w-1/2 slide-up">
-            <h2 class="text-3xl font-bold mb-4 text-yellow-500">Cultural Significance</h2>
-            <p class="text-black" style="text-align: justify;">
-               Alexandria stands as a beacon of cultural fusion, where Mediterranean, Egyptian, and Middle Eastern influences converge. Founded by Alexander the Great in 331 BCE, the city became the intellectual capital of the ancient world, housing the legendary Library of Alexandria and the Pharos Lighthouse. Today, its cultural landscape blends ancient Greco-Roman ruins with Ottoman-era architecture, French colonial buildings, and modern Egyptian art scenes. The Alexandria Opera House and numerous art galleries continue this legacy, while the city's cosmopolitan atmosphere is reflected in its literature, music, and vibrant café culture that once hosted literary giants like Constantine Cavafy and Lawrence Durrell.
-            </p>
-        </div>
-    </div>
-  
-    <!-- Section 3 (Image Left / Text Right) -->
-    <div class="flex flex-col md:flex-row gap-8 items-center destination-item">
-        <div class="md:w-1/2 relative">
-            <div id="slideshow3" class="w-full h-auto border-8 border-[#326964] rounded-3xl shadow-lg overflow-hidden">
-                <img src="photos/st_ mercurius coptic alexandria - Bing.jpeg" class="w-full h-auto block">
-            </div>
-        </div>
-        <div class="md:w-1/2 slide-up">
-            <h2 class="text-3xl font-bold mb-4 text-yellow-500">Religious Heritage (Judaism, Christianity, and Islam)</h2>
-            <p class="text-black" style="text-align: justify;">
-                Alexandria's religious tapestry includes sacred sites of all three Abrahamic faiths. The city once hosted one of the largest Jewish communities in the Mediterranean, centered around the Eliyahu Hanavi Synagogue (rebuilt in 1850), where philosopher Philo of Alexandria taught. For Christians, it was the seat of the Coptic Orthodox Pope until the 11th century, home to Saint Mark who founded the church in 42 CE, and contains important churches like Saint Catherine's Cathedral. In Islamic history, Alexandria welcomed Amr ibn al-As in 641 CE, and contains significant mosques including the Attarine Mosque (originally a Byzantine church) and the modern Abu al-Abbas al-Mursi Mosque. These sites collectively showcase Alexandria's role as a rare city where all three religions flourished simultaneously through centuries.
-            </p>
-        </div>
-    </div>
-</div>
-
-   
-
-            <!-- Recommended Places Gallery -->
-<!-- Photo Gallery Section -->
-<section class="py-12 bg-[#326964]">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-14 fade-in">
-            <h2 class=" roboto-light text-4xl font-bold text-white mb-4">Recommended Places</h2>
-            <p class="text-yellow-500 max-w-3xl mx-auto">Discover Alexandria's most beautiful landmarks and attractions</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Place 1 -->
-            <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="/photos/1 rome.jpeg" 
-                     alt="The Romanian Theatre" 
-                     class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                    <h3 class="text-white playfair text-2xl font-bold text-center px-4">The Romanian Theatre</h3>
-                </div>
-            </div>
-
-            <!-- Place 2 -->
-            <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="/photos/greco roman.jpg" 
-                     alt="The Greco-Roman Museum" 
-                     class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                    <h3 class="text-white playfair text-2xl font-bold text-center px-4">The Greco-Roman Museum</h3>
-                </div>
-            </div>
-
-            <!-- Place 3 -->
-            <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="/photos/Royal-Jewelry-Museumff.webp" 
-                     alt="Royal Jewelry Museum" 
-                     class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                    <h3 class="text-white playfair text-2xl font-bold text-center px-4">Royal Jewelry Museum</h3>
-                </div>
-            </div>
-
-            <!-- Place 4 -->
-            <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="/photos/1opera.jpg" 
-                     alt="Opera House" 
-                     class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                    <h3 class="text-white playfair text-2xl font-bold text-center px-4">Opera House</h3>
-                </div>
-            </div>
-
-            <!-- Place 5 -->
-            <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="/photos/Abu-I-Abbas-al-Mursi-_mosque.jpg" 
-                     alt="Abu al-Abbas al-Mursi Mosque" 
-                     class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                    <h3 class="text-white playfair text-2xl font-bold text-center px-4">Abu al-Abbas al-Mursi Mosque</h3>
-                </div>
-            </div>
-
-            <!-- Place 6 -->
-            <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <img src="/photos/pompey's pillar al.jpeg" 
-                     alt="Pompey's Pillar" 
-                     class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                    <h3 class="text-white playfair text-2xl font-bold text-center px-4">Pompey's Pillar</h3>
-                </div>
-            </div>
-          
-        
-    </div>
-    <!-- More robust centered button solution -->
-<div class="container mx-auto text-center py-4">
-    <a href="destinations.html" class="inline-block">
-        <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-lg py-4 px-8 rounded-lg transition duration-300 shadow-lg">
-            More Destinations
-        </button>
-    </a>
-</div>
-</section>
-          
-
-
-          <!-- Activities & Hidden Gems Section -->
-<section class="py-20 ">
- <!-- Activities Content -->
-  
- <div id="activities" class="tab-content active">
-    <div class="text-center mb-12 fade-in">
-        <h2 class="roboto-light text-4xl font-bold text-black mb-8">Activities & Hidden Gems</h2>
-        <p class="text-yellow-500 max-w-3xl mx-auto">Discover Alexandria's most beautiful landmarks and attractions</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Activity 1 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-            <div class="relative h-48 overflow-hidden">
-                <img src="photos/grand.jpg" 
-                     alt="Sunset at Qaitbay" 
-                     class="w-full h-full object-cover transition duration-500 hover:scale-105">
-                <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">TOP RATED</span>
-            </div>
-            <div class="p-6">
-                <div class="flex items-center mb-3">
-                    <i class="fas fa-clock text-yellow-500 mr-2"></i>
-                    <span class="text-sm text-gray-600">2-3 hours • Evening</span>
-                </div>
-                <h3 class="playfair text-xl font-bold text-gray-800 mb-2">Grand shahin</h3>
-                <p class="text-gray-600 mb-4">The best place for friends with new exprience</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-yellow-500 font-bold">From $25/person</span>
-                    <a href="activites.html">
-                        <button class="text-yellow-500 hover:text-yellow-600 font-medium transition">Details →</button></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Activity 2 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-            <div class="relative h-48 overflow-hidden">
-                <img src="photos/sea shell.jpg" 
-                     alt="Lama resturant" 
-                     class="w-full h-full object-cover transition duration-500 hover:scale-105">
-            </div>
-            <div class="p-6">
-                <div class="flex items-center mb-3">
-                    <i class="fas fa-clock text-yellow-500 mr-2"></i>
-                    <span class="text-sm text-gray-600">Half day • Morning/Afternoon</span>
-                </div>
-                <h3 class="playfair text-xl font-bold text-gray-800 mb-2"> The sea shell mural at Qaitbay</h3>
-                <p class="text-gray-600 mb-4" style="text-align: justify;">It’s in the car park located at the car entrance to Pharos Island. Where the citadel of Qaitbay is located. When you’re visiting the Citadel you can add it to your stop off. </p>
-                <div class="flex justify-between items-center">
-                    <span class="text-yellow-500 font-bold">For free</span>
-                    <a href="activites.html">
-                        <button class="text-yellow-500 hover:text-yellow-600 font-medium transition">Details →</button></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Activity 3 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-            <div class="relative h-48 overflow-hidden">
-                <img src="photos/veranda.jpg" 
-                     alt="Fish Market" 
-                     class="w-full h-full object-cover transition duration-500 hover:scale-105">
-                <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">LOCAL FAVORITE</span>
-            </div>
-            <div class="p-6">
-                <div class="flex items-center mb-3">
-                    <i class="fas fa-clock text-yellow-500 mr-2"></i>
-                    <span class="text-sm text-gray-600">3-4 hours • Lunchtime</span>
-                </div>
-                <h3 class="playfair text-xl font-bold text-gray-800 mb-2">veranda</h3>
-                <p class="text-gray-600 mb-4">Veranda art space for different activites</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-yellow-500 font-bold">From $35/person</span>
-                    <a href="activites.html">
-                    <button class="text-yellow-500 hover:text-yellow-600 font-medium transition">Details →</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
- <!-- More robust centered button solution -->
-<div class="container mx-auto text-center py-4">
-    <a href="activites.html" class="inline-block">
-        <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-lg py-4 px-8 rounded-lg transition duration-300 shadow-lg">
-            Explore
-        </button>
-    </a>
-</div>
-
-    </section>
-            
-<!-- hotels & restaurants section -->
-<section class="bg-[#326964]">
-    <!-- Spacer -->
-    <div class="h-16"></div>
-   
-    <!-- Photo Cards Section - Now with wider cards -->
-    <div class="w-full px-4 pb-8 mx-auto">
-        <!-- Section Header -->
-        <div class="text-center mb-12 fade-in">
-            <h2 class="roboto-light text-5xl font-bold text-white mb-4">Hotels & Restaurants</h2>
-            <p class="text-yellow-500 max-w-3xl mx-auto">Discover Alexandria's most beautiful landmarks and attractions</p>
-        </div>
-
-        <!-- Wider Grid Layout -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 h-[550px] w-full max-w-[1800px] mx-auto">
-            <!-- Card 1 - Wider version -->
-            <div class="relative overflow-hidden rounded-xl transition-all duration-300 h-full w-full min-w-[280px] group"
-                 style="background-image: url('/photos/africana.jpg'); background-size: cover; background-position: center;">
-                <!-- Dark overlay -->
-                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                
-                <!-- Card content -->
-                <div class="absolute bottom-0 left-0 p-8 text-white w-full">
-                    <h3 class="text-2xl font-bold mb-2">Africana Resort King Mariout</h3>
-                    <div class="flex gap-1 mb-3">
-                        <!-- 4 filled stars, 1 empty -->
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-gray-300">★</span>
+        <!-- Navbar -->
+        <header id="navbar" class="fixed top-0 left-0 w-full flex justify-between items-center p-4 transition-colors duration-300 z-50 bg-white/10 backdrop-blur">
+            <div class="flex items-center">
+                <!-- Dropdown Menu Button -->
+                <div class="relative mr-4">
+                    <button id="dropdown-button" class="text-white text-2xl hover:text-yellow-500 transition-colors">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div id="dropdown-menu" class="hidden absolute top-full left-0 bg-white shadow-lg rounded-md min-w-[180px] z-50 mt-2">
+                        <a href="index.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Home</a>
+                        <a href="aboutus.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">About Us</a>
+                        <a href="#contact" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Contact Us</a>
+                        <a href="login.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Login & Register</a>
+                        <a href="destinations.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Destinations</a>
+                        <a href="hotels.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Hotels & restaurants</a>
+                        <a href="packages.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Packages</a>
+                        <a href="activites.html" class="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors">Activities & hidden gems</a>
                     </div>
-                    <a href="hotels.html" class="inline-block">
-                        <button class="px-5 py-2.5 bg-white text-black hover:bg-gray-100 transition rounded-lg font-medium">
-                            View More
-                        </button>
-                    </a>
                 </div>
-            </div>
-  
-            <!-- Card 2 -->
-            <div class="relative overflow-hidden rounded-xl transition-all duration-300 h-full w-full min-w-[280px] group"
-                 style="background-image: url('/photos/four season.jpeg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                <div class="absolute bottom-0 left-0 p-8 text-white w-full">
-                    <h3 class="text-2xl font-bold mb-2">Four Seasons Hotel San Stefano</h3>
-                    <div class="flex gap-1 mb-3">
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-gray-300">★</span>
-                    </div>
-                    <a href="hotels.html" class="inline-block">
-                        <button class="px-5 py-2.5 bg-white text-black hover:bg-gray-100 transition rounded-lg font-medium">
-                            View More
-                        </button>
-                    </a>
-                </div>
-            </div>
-  
-            <!-- Card 3 -->
-            <div class="relative overflow-hidden rounded-xl transition-all duration-300 h-full w-full min-w-[280px] group"
-                 style="background-image: url('/photos/hiltomn.jpg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                <div class="absolute bottom-0 left-0 p-8 text-white w-full">
-                    <h3 class="text-2xl font-bold mb-2">Hilton Green Plaza</h3>
-                    <div class="flex gap-1 mb-3">
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-gray-300">★</span>
-                    </div>
-                    <a href="hotels.html" class="inline-block">
-                        <button class="px-5 py-2.5 bg-white text-black hover:bg-gray-100 transition rounded-lg font-medium">
-                            View More
-                        </button>
-                    </a>
-                </div>
+                <a href="index.html">
+                    <span class="text-white text-2xl md:text-4xl font-bold font-[Greek-Freak]">Alexplore</span>
+                </a>
             </div>
 
-            <!-- Card 4 -->
-            <div class="relative overflow-hidden rounded-xl transition-all duration-300 h-full w-full min-w-[280px] group"
-                 style="background-image: url('/photos/rixos.jpg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                <div class="absolute bottom-0 left-0 p-8 text-white w-full">
-                    <h3 class="text-2xl font-bold mb-2">Rixos Montaza</h3>
-                    <div class="flex gap-1 mb-3">
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-yellow-400">★</span>
-                        <span class="text-xl text-gray-300">★</span>
-                    </div>
-                    <a href="hotels.html" class="inline-block">
-                        <button class="px-5 py-2.5 bg-white text-black hover:bg-gray-100 transition rounded-lg font-medium">
-                            View More
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-4 lg:space-x-6 text-base lg:text-lg">
+                <a href="index.html" class="text-white hover:text-yellow-500 transition-colors font-bold">Home</a>
+                <a href="aboutus.html" class="text-white hover:text-yellow-500 transition-colors font-bold">About Us</a>
+                <a href="#contact" class="text-white hover:text-yellow-500 transition-colors font-bold">Contact Us</a>
+                <a href="packages.html" class="text-white hover:text-yellow-500 transition-colors font-bold">Packages</a>
+            </nav>
 
-        <!-- Centered "More Hotels" button -->
-        <div class="flex justify-center pt-12 pb-6">
-            <a href="hotels.html" class="inline-block">
-                <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg shadow-md">
-                    More Hotels
+            <!-- Right Side Icons -->
+            <div class="flex items-center gap-1 md:gap-2">
+                <button id="searchToggle" class="text-white hover:text-yellow-500 focus:outline-none px-1 md:px-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
                 </button>
-            </a>
-        </div>
-    </div>
-</section>
+                <a href="login.html" class="text-white hover:text-yellow-500 transition-colors px-1 md:px-2">
+                    <i class="fa-solid fa-user text-lg md:text-xl"></i>
+                </a>
+                <a href="booking.html">
+                    <button class="bg-yellow-500 text-white px-2 py-1 md:px-3 md:py-1.5 rounded-lg hover:bg-yellow-600 transition-colors text-sm md:text-base font-bold">
+                        Booking
+                    </button>
+                </a>
+            </div>
+        </header>
 
-     <!-- Discount Section - Exact Size Preserved -->
-<section class="w-full relative" style="min-height: 100vh; padding: 2rem;">
-    <div class="relative rounded-xl p-10 shadow-lg" style="border: 8px solid #326964;">
+        <!-- Search Card -->
+        <div id="searchCard" class="hidden fixed top-16 md:top-20 right-2 md:right-4 bg-white p-3 md:p-4 rounded-lg shadow-lg z-50 w-[90vw] max-w-md">
+            <div class="flex">
+                <input id="searchInput" type="text" placeholder="Search..." class="flex-grow px-3 py-2 md:px-4 md:py-2 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                <button id="searchButton" class="bg-yellow-500 text-white px-3 py-2 md:px-4 md:py-2 rounded-r-lg hover:bg-yellow-600 transition-colors">
+                    Search
+                </button>
+            </div>
+            <div id="searchResults" class="mt-2"></div>
+        </div>
+    
+        <!-- Hero Section -->
+        <section class="relative h-screen w-full overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 bg-black/50 z-10"></div>
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+                style="background-image: url('photos/MOBILE\ PHOTOGRAPHY\ for\ downtown-egypt\'s\ arch_\ STYLES\ -\ Ahmed\ Samy\ Elesseily.jpeg');"></div>
+            
+            <!-- Content Container -->
+            <div class="container mx-auto h-full flex items-center relative z-20 px-4">
+                <div class="max-w-2xl text-white px-4">
+                    <!-- Animated Subtitle -->
+                    <h3 class="text-base md:text-lg lg:text-xl font-light mb-2 md:mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                        WELCOME TO 
+                    </h3>
+                    
+                    <!-- Main Animated Title -->
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight animate__animated animate__fadeInUp">
+                        ALEXPLORE <span class="text-yellow-400">TRAVEL</span> WEBSITE
+                    </h1>
+                    
+                    <!-- Animated Description -->
+                    <p class="text-base md:text-lg mb-6 md:mb-8 animate__animated animate__fadeInUp animate__delay-1s">
+                        The Soul of the Mediterranean in Your Hands.
+                    </p>
+                    
+                    <!-- Animated Button -->
+                    <a href="#start">
+                        <button class="px-6 py-2 md:px-8 md:py-3 bg-yellow-500 text-black font-medium rounded-md hover:bg-yellow-600 transition duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+                            EXPLORE YOUR WAY
+                        </button>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Scrolling Indicator -->
+            <div class="absolute bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce" id="start">
+                <svg class="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+     
+        <!-- Destinations Section -->
+        <div class="w-full px-4 md:w-3/4 mx-auto space-y-8 md:space-y-16 py-8 md:py-12">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="roboto-light text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-2">Most popular destinations</h2>
+                <p class="text-yellow-500 max-w-3xl mx-auto">Discover Alexandria's most beautiful landmarks and attractions</p>
+            </div>
+            
+            <!-- Section 1 (Image Left / Text Right) -->
+            <div class="destination-item flex flex-col md:flex-row gap-6 md:gap-8">
+                <div class="w-full md:w-1/2">
+                    <div class="slideshow-container">
+                        <img src="photos/1678607223.jpg" class="slideshow-image">
+                        <img src="photos/lighthouse.jpeg" class="slideshow-image">
+                        <img src="photos/2pompey's.jpg" class="slideshow-image">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 slide-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-yellow-500">Historical Legacy</h2>
+                    <p class="text-black text-justify">
+                        As a crossroads of civilizations, Alexandria's history spans Pharaonic, Ptolemaic, Roman, Byzantine, and Islamic eras. The city witnessed Cleopatra's reign, Julius Caesar's arrival, and Napoleon's campaign. Its harbor holds sunken treasures from the Ptolemaic period, while landmarks like Pompey's Pillar and the Catacombs of Kom El Shoqafa reveal layered histories. The Qaitbay Citadel stands where the ancient Lighthouse once guided Mediterranean sailors. During World War II, Alexandria played a strategic role, and its history as Egypt's gateway to Europe shaped its unique identity distinct from other Egyptian cities, making it a living museum of Mediterranean history.
+                    </p>
+                </div>
+            </div>
+          
+            <!-- Section 2 (Text Left / Image Right) -->
+            <div class="destination-item flex flex-col md:flex-row-reverse gap-6 md:gap-8">
+                <div class="w-full md:w-1/2">
+                    <div class="slideshow-container">
+                        <img src="photos/Alexandria Opera House_ Sayed Darwish theater_.jpeg" class="slideshow-image">
+                        <img src="photos/Alexandria Library Egypt.jpeg" class="slideshow-image">
+                        <img src="photos/1.jpeg" class="slideshow-image">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 slide-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-yellow-500">Cultural Significance</h2>
+                    <p class="text-black text-justify">
+                        Alexandria stands as a beacon of cultural fusion, where Mediterranean, Egyptian, and Middle Eastern influences converge. Founded by Alexander the Great in 331 BCE, the city became the intellectual capital of the ancient world, housing the legendary Library of Alexandria and the Pharos Lighthouse. Today, its cultural landscape blends ancient Greco-Roman ruins with Ottoman-era architecture, French colonial buildings, and modern Egyptian art scenes. The Alexandria Opera House and numerous art galleries continue this legacy, while the city's cosmopolitan atmosphere is reflected in its literature, music, and vibrant café culture that once hosted literary giants like Constantine Cavafy and Lawrence Durrell.
+                    </p>
+                </div>
+            </div>
+          
+            <!-- Section 3 (Image Left / Text Right) -->
+            <div class="destination-item flex flex-col md:flex-row gap-6 md:gap-8">
+                <div class="w-full md:w-1/2">
+                    <div class="slideshow-container">
+                        <img src="photos/st_ mercurius coptic alexandria - Bing.jpeg" class="slideshow-image">
+                        <img src="photos/synagogue.jpeg" class="slideshow-image">
+                        <img src="photos/274967-مسجد-العطارين-في-الإسكندرية.jpeg" class="slideshow-image">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 slide-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-yellow-500">Religious Heritage (Judaism, Christianity, and Islam)</h2>
+                    <p class="text-black text-justify">
+                        Alexandria's religious tapestry includes sacred sites of all three Abrahamic faiths. The city once hosted one of the largest Jewish communities in the Mediterranean, centered around the Eliyahu Hanavi Synagogue (rebuilt in 1850), where philosopher Philo of Alexandria taught. For Christians, it was the seat of the Coptic Orthodox Pope until the 11th century, home to Saint Mark who founded the church in 42 CE, and contains important churches like Saint Catherine's Cathedral. In Islamic history, Alexandria welcomed Amr ibn al-As in 641 CE, and contains significant mosques including the Attarine Mosque (originally a Byzantine church) and the modern Abu al-Abbas al-Mursi Mosque. These sites collectively showcase Alexandria's role as a rare city where all three religions flourished simultaneously through centuries.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended Places Gallery -->
+        <section class="py-8 md:py-12 bg-[#326964]">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-8 md:mb-14 fade-in">
+                    <h2 class="roboto-light text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">Recommended Places</h2>
+                    <p class="text-yellow-500 max-w-3xl mx-auto">Discover Alexandria's most beautiful landmarks and attractions</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <!-- Place 1 -->
+                    <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <img src="/photos/1 rome.jpeg" 
+                            alt="The Romanian Theatre" 
+                            class="w-full h-48 md:h-64 object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <h3 class="text-white playfair text-xl md:text-2xl font-bold text-center px-4">The Romanian Theatre</h3>
+                        </div>
+                    </div>
+
+                    <!-- Place 2 -->
+                    <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <img src="/photos/greco roman.jpg" 
+                            alt="The Greco-Roman Museum" 
+                            class="w-full h-48 md:h-64 object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <h3 class="text-white playfair text-xl md:text-2xl font-bold text-center px-4">The Greco-Roman Museum</h3>
+                        </div>
+                    </div>
+
+                    <!-- Place 3 -->
+                    <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <img src="/photos/Royal-Jewelry-Museumff.webp" 
+                            alt="Royal Jewelry Museum" 
+                            class="w-full h-48 md:h-64 object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <h3 class="text-white playfair text-xl md:text-2xl font-bold text-center px-4">Royal Jewelry Museum</h3>
+                        </div>
+                    </div>
+
+                    <!-- Place 4 -->
+                    <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <img src="/photos/1opera.jpg" 
+                            alt="Opera House" 
+                            class="w-full h-48 md:h-64 object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <h3 class="text-white playfair text-xl md:text-2xl font-bold text-center px-4">Opera House</h3>
+                        </div>
+                    </div>
+
+                    <!-- Place 5 -->
+                    <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <img src="/photos/Abu-I-Abbas-al-Mursi-_mosque.jpg" 
+                            alt="Abu al-Abbas al-Mursi Mosque" 
+                            class="w-full h-48 md:h-64 object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <h3 class="text-white playfair text-xl md:text-2xl font-bold text-center px-4">Abu al-Abbas al-Mursi Mosque</h3>
+                        </div>
+                    </div>
+
+                    <!-- Place 6 -->
+                    <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <img src="/photos/pompey's pillar al.jpeg" 
+                            alt="Pompey's Pillar" 
+                            class="w-full h-48 md:h-64 object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <h3 class="text-white playfair text-xl md:text-2xl font-bold text-center px-4">Pompey's Pillar</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More robust centered button solution -->
+                <div class="container mx-auto text-center py-4 md:py-8">
+                    <a href="destinations.html" class="inline-block">
+                        <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 rounded-lg transition duration-300 shadow-lg">
+                            More Destinations
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+          
+        <!-- Activities & Hidden Gems Section -->
+        <section class="py-12 md:py-20">
+            <div id="activities" class="tab-content active">
+                <div class="text-center mb-8 md:mb-12 fade-in">
+                    <h2 class="roboto-light text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-4 md:mb-8">Activities & Hidden Gems</h2>
+                    <p class="text-yellow-500 max-w-3xl mx-auto">Discover Alexandria's most beautiful landmarks and attractions</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
+                    <!-- Activity 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="photos/grand.jpg" 
+                                alt="Sunset at Qaitbay" 
+                                class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                            <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-semibold px-2 py-1 rounded-full">TOP RATED</span>
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <div class="flex items-center mb-2 md:mb-3">
+                                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                                <span class="text-sm text-gray-600">2-3 hours • Evening</span>
+                            </div>
+                            <h3 class="playfair text-lg md:text-xl font-bold text-gray-800 mb-2">Grand shahin</h3>
+                            <p class="text-gray-600 mb-3 md:mb-4">The best place for friends with new exprience</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-500 font-bold">From $25/person</span>
+                                <a href="activites.html">
+                                    <button class="text-yellow-500 hover:text-yellow-600 font-medium transition">Details →</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="photos/sea shell.jpg" 
+                                alt="Lama resturant" 
+                                class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <div class="flex items-center mb-2 md:mb-3">
+                                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                                <span class="text-sm text-gray-600">Half day • Morning/Afternoon</span>
+                            </div>
+                            <h3 class="playfair text-lg md:text-xl font-bold text-gray-800 mb-2"> The sea shell mural at Qaitbay</h3>
+                            <p class="text-gray-600 mb-3 md:mb-4 text-justify">It's in the car park located at the car entrance to Pharos Island. Where the citadel of Qaitbay is located. When you're visiting the Citadel you can add it to your stop off.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-500 font-bold">For free</span>
+                                <a href="activites.html">
+                                    <button class="text-yellow-500 hover:text-yellow-600 font-medium transition">Details →</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="photos/veranda.jpg" 
+                                alt="Fish Market" 
+                                class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                            <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-semibold px-2 py-1 rounded-full">LOCAL FAVORITE</span>
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <div class="flex items-center mb-2 md:mb-3">
+                                <i class="fas fa-clock text-yellow-500 mr-2"></i>
+                                <span class="text-sm text-gray-600">3-4 hours • Lunchtime</span>
+                            </div>
+                            <h3 class="playfair text-lg md:text-xl font-bold text-gray-800 mb-2">veranda</h3>
+                            <p class="text-gray-600 mb-3 md:mb-4">Veranda art space for different activites</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-500 font-bold">From $35/person</span>
+                                <a href="activites.html">
+                                    <button class="text-yellow-500 hover:text-yellow-600 font-medium transition">Details →</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More robust centered button solution -->
+                <div class="container mx-auto text-center py-4 md:py-8">
+                    <a href="activites.html" class="inline-block">
+                        <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 rounded-lg transition duration-300 shadow-lg">
+                            Explore
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+                
+        <!-- hotels & restaurants section -->
+        <section class="bg-[#326964]">
+            <!-- Spacer -->
+            <div class="h-8 md:h-16"></div>
+        
+            <!-- Photo Cards Section - Now with wider cards -->
+            <div class="w-full px-4 pb-8 mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-8 md:mb-12 fade-in">
+                    <h2 class="roboto-light text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Hotels & Restaurants</h2>
+                    <p class="text-yellow-500 max-w-3xl mx-auto">Discover Alexandria's most beautiful landmarks and attractions</p>
+                </div>
+
+                <!-- Wider Grid Layout -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 h-auto md:h-[550px] w-full max-w-[1800px] mx-auto">
+                    <!-- Card 1 - Wider version -->
+                    <div class="relative overflow-hidden rounded-xl transition-all duration-300 h-64 md:h-full w-full min-w-[280px] group"
+                        style="background-image: url('/photos/africana.jpg'); background-size: cover; background-position: center;">
+                        <!-- Dark overlay -->
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                        
+                        <!-- Card content -->
+                        <div class="absolute bottom-0 left-0 p-4 md:p-8 text-white w-full">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">Africana Resort King Mariout</h3>
+                            <div class="flex gap-1 mb-2 md:mb-3">
+                                <!-- 4 filled stars, 1 empty -->
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-gray-300">★</span>
+                            </div>
+                            <a href="hotels.html" class="inline-block">
+                                <button class="px-3 py-1.5 md:px-5 md:py-2.5 bg-white text-black hover:bg-gray-100 transition rounded-lg font-medium">
+                                    View More
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Card 2 -->
+                    <div class="relative overflow-hidden rounded-xl transition-all duration-300 h-64 md:h-full w-full min-w-[280px] group"
+                        style="background-image: url('/photos/four season.jpeg'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                        <div class="absolute bottom-0 left-0 p-4 md:p-8 text-white w-full">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">Four Seasons Hotel San Stefano</h3>
+                            <div class="flex gap-1 mb-2 md:mb-3">
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-gray-300">★</span>
+                            </div>
+                            <a href="hotels.html" class="inline-block">
+                                <button class="px-3 py-1.5 md:px-5 md:py-2.5 bg-white text-black hover:bg-gray-100 transition rounded-lg font-medium">
+                                    View More
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Card 3 -->
+                    <div class="relative overflow-hidden rounded-xl transition-all duration-300 h-64 md:h-full w-full min-w-[280px] group"
+                        style="background-image: url('/photos/hiltomn.jpg'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                        <div class="absolute bottom-0 left-0 p-4 md:p-8 text-white w-full">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">Hilton Green Plaza</h3>
+                            <div class="flex gap-1 mb-2 md:mb-3">
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-gray-300">★</span>
+                            </div>
+                            <a href="hotels.html" class="inline-block">
+                                <button class="px-3 py-1.5 md:px-5 md:py-2.5 bg-white text-black hover:bg-gray-100 transition rounded-lg font-medium">
+                                    View More
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="relative overflow-hidden rounded-xl transition-all duration-300 h-64 md:h-full w-full min-w-[280px] group"
+                        style="background-image: url('/photos/rixos.jpg'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                        <div class="absolute bottom-0 left-0 p-4 md:p-8 text-white w-full">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">Rixos Montaza</h3>
+                            <div class="flex gap-1 mb-2 md:mb-3">
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-yellow-400">★</span>
+                                <span class="text-lg md:text-xl text-gray-300">★</span>
+                            </div>
+                            <a href="hotels.html" class="inline-block">
+                                <button class="px-3 py-1.5 md:px-5 md:py-2.5 bg-white text-black hover:bg-gray-100 transition rounded-lg font-medium">
+                                    View More
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centered "More Hotels" button -->
+                <div class="flex justify-center pt-8 md:pt-12 pb-4 md:pb-6">
+                    <a href="hotels.html" class="inline-block">
+                        <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 md:py-3 md:px-8 rounded-lg transition duration-300 text-base md:text-lg shadow-md">
+                            More Hotels
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+       <!-- Discount Section - Responsive Fix -->
+<section class="w-full relative min-h-[80vh] md:min-h-[70vh] lg:min-h-[60vh] xl:min-h-[50vh] p-4 md:p-8">
+    <div class="relative rounded-xl p-6 md:p-8 lg:p-10 shadow-lg mx-auto" style="border: 6px solid #326964; max-width: 1400px;">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg" 
              style="background-image: url('photos/15\ Reasons\ Why\ You\ Should\ Visit\ Alexandria\ Egypt\ &\ Why\ it\'s\ Worth\ it!.jpeg');">
@@ -503,202 +486,269 @@
         </div>
 
         <!-- Content Container -->
-        <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between">
+        <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-12">
             <!-- Left Side - Fixed Size Image -->
-            <div class="w-full lg:w-auto mb-8 lg:mb-0" style="max-width: 300px;">
+            <div class="w-full lg:w-auto" style="max-width: 300px;">
                 <img src="photos/compus.jpg" alt="Travel Illustration" 
                      class="w-full h-auto rounded-lg animate__animated animate__fadeInLeft">
             </div>
 
-            <!-- Right Side - Fixed Width Text Content -->
-            <div class="w-full lg:w-auto text-white" style="width: 80%; padding-left: 3rem; position: relative;">
+            <!-- Right Side - Text Content -->
+            <div class="w-full lg:w-auto text-white px-4 lg:px-0" style="position: relative;">
                 <!-- Discount Badge -->
-                <div class="absolute top-5 right-0 bg-yellow-500 text-white font-bold rounded-full animate__animated animate__pulse animate__infinite"
-                     style="font-size: 2.25rem; padding: 0.5rem 1.25rem;">
+                <div class="absolute -top-4 right-0 lg:top-5 lg:right-0 bg-yellow-500 text-white font-bold rounded-full animate__animated animate__pulse animate__infinite"
+                     style="font-size: 1.5rem; padding: 0.5rem 1.25rem;">
                     30% OFF
                 </div>
 
-                <h1 class="font-extrabold uppercase" style="font-size: 5rem;">
-                    Interested?
+                <h1 class="font-extrabold uppercase text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-2 lg:mb-4">
+                    INTERESTED?
                 </h1>
                 
-                <p class="text-yellow-500 font-semibold mt-4" style="font-size: 1.5rem;">
+                <p class="text-yellow-500 font-semibold text-lg lg:text-xl xl:text-2xl mb-3 lg:mb-6">
                     Discount if you book now
                 </p>
                 
-                <p class="text-gray-300 mt-4" style="font-size: 1.25rem; line-height: 1.75rem;">
+                <p class="text-gray-300 text-base lg:text-lg xl:text-xl mb-4 lg:mb-8 max-w-2xl">
                     "Discover exclusive travel deals and limited-time discounts on our most popular destinations – book now to enjoy incredible savings on your next adventure!"
                 </p>
 
                 <!-- Button -->
-                <button id="offerBtn" class="mt-6 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg shadow-lg pulse"
-                        style="padding: 0.75rem 1.5rem; font-size: 1.25rem;">
+                <button id="offerBtn" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg shadow-lg pulse px-6 py-2 lg:px-8 lg:py-3 text-lg lg:text-xl">
                     Offers
                 </button>
                 
                 <!-- Offer Message -->
-                <div id="offerMessage" class="hidden mt-6 p-4 bg-gray-800 rounded-lg" style="border-left: 4px solid #eab308;">
-                    <h3 class="font-bold text-yellow-500" style="font-size: 1.25rem;">Current Packages with Offers:</h3>
-                    <ul class="mt-2 space-y-2" style="font-size: 1rem;">
+                <div id="offerMessage" class="hidden mt-4 lg:mt-6 p-3 lg:p-4 bg-gray-800 rounded-lg" style="border-left: 4px solid #eab308;">
+                    <h3 class="font-bold text-yellow-500 text-lg lg:text-xl">Current Packages with Offers:</h3>
+                    <ul class="mt-2 lg:mt-3 space-y-1 lg:space-y-2">
                         <li>• Mediterranean Beach Relaxation Tour Package - 30% off until june 30</li>
                         <li>• Historical & Cultural Tour Package - 25% off for early bookings</li>
                         <li>• Family-Friendly Tour Package - Buy 1 get 1 free</li>
                     </ul>
-                    <p class="mt-3 text-gray-300" style="font-size: 1rem;">Contact our agents for more details!</p>
+                    <p class="mt-2 lg:mt-3 text-gray-300">Contact our agents for more details!</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="bg-[#326964]">
-    <div class="container mx-auto px-6 py-14">
-        <!-- Search/Booking Section -->
-        <div class="bg-white rounded-xl shadow-lg p-6 mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">UNCOVER Packages</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-                <!-- Destination -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Search Packages*</label>
-                    <div class="relative">
-                        <input type="text" id="destination" placeholder="Enter Destination" 
-                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        <section class="bg-[#326964]">
+            <div class="container mx-auto px-4 md:px-6 py-8 md:py-14">
+                <!-- Search/Booking Section -->
+                <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 mb-8 md:mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-6">UNCOVER Packages</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-4 md:mb-6">
+                        <!-- Destination -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Search Packages*</label>
+                            <div class="relative">
+                                <input type="text" id="destination" placeholder="Enter Destination" 
+                                    class="w-full p-2 md:p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                        
+                        <!-- Number of People -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Pax Number*</label>
+                            <input type="number" id="people" placeholder="No. of People" 
+                                class="w-full p-2 md:p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        
+                        <!-- Check-in Date -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Checkin Date*</label>
+                            <div class="relative">
+                                <input type="date" id="checkin" 
+                                    class="w-full p-2 md:p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <i class="fas fa-calendar-alt absolute right-3 top-3 text-gray-400"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Check-out Date -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Checkout Date*</label>
+                            <div class="relative">
+                                <input type="date" id="checkout" 
+                                    class="w-full p-2 md:p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <i class="fas fa-calendar-alt absolute right-3 top-3 text-gray-400"></i>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Number of People -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Pax Number*</label>
-                    <input type="number" id="people" placeholder="No. of People" 
-                           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                </div>
-                
-                <!-- Check-in Date -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Checkin Date*</label>
-                    <div class="relative">
-                        <input type="date" id="checkin" 
-                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <i class="fas fa-calendar-alt absolute right-3 top-3.5 text-gray-400"></i>
-                    </div>
-                </div>
-                
-                <!-- Check-out Date -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Checkout Date*</label>
-                    <div class="relative">
-                        <input type="date" id="checkout" 
-                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <i class="fas fa-calendar-alt absolute right-3 top-3.5 text-gray-400"></i>
+                    
+                    <button id="inquireBtn" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 md:py-3 md:px-6 rounded-lg transition duration-300 w-full md:w-auto">
+                        INQUIRE NOW
+                    </button>
+                    
+                    <!-- Results Section -->
+                    <div id="resultsContainer" class="hidden mt-6 p-4 md:p-6 bg-gray-50 rounded-lg relative">
+                        <button id="closeResults" class="absolute top-2 md:top-4 right-2 md:right-4 text-gray-500 hover:text-gray-700 focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                        <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-gray-800">Available Packages</h3>
+                        <div id="packagesResults" class="space-y-3 md:space-y-4">
+                            <!-- Results will appear here -->
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <button id="inquireBtn" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 w-full md:w-auto">
-                INQUIRE NOW
-            </button>
-            
-            <!-- Results Section -->
-            <div id="resultsContainer" class="hidden mt-8 p-6 bg-gray-50 rounded-lg relative">
-                <button id="closeResults" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-                <h3 class="text-xl font-semibold mb-4 text-gray-800">Available Packages</h3>
-                <div id="packagesResults" class="space-y-4">
-                    <!-- Results will appear here -->
+        </section>
+
+       <!-- packages -->
+<section class="bg-gray-50">
+    <div class="container mx-auto px-4 md:px-6 py-8 md:py-16">
+        <!-- Popular Packages Header -->
+        <div class="text-center mb-8 md:mb-12">
+            <h2 class="roboto-light text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2">POPULAR PACKAGES</h2>
+            <p class="roboto-light text-yellow-500">CHECKOUT OUR PACKAGES</p>
+        </div>
+
+        <!-- Package 1 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8 md:mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3">
+                <!-- Left Column - Photo -->
+                <div class="h-64 md:h-96 bg-cover bg-center" style="background-image: url('/photos/Stanley\ bridge\,\ Alexandria\,\ Egypt.jpeg');">
+                </div>
+                <!-- Middle Column - Package Details -->
+                <div class="p-4 md:p-8 border-r border-gray-200">
+                    <h3 class="playfair text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-3 md:mb-4">
+                        Nature & Adventure
+                    </h3>
+                    <p class="roboto-light text-gray-600 mb-4 md:mb-6">
+                        Lake Mariout,Kayaking or Windsurfing at Abu Qir Bay,Ras El-Tin Palace,Montaza Beach or Stanley Bridge
+                    </p>
+                    <div class="flex items-center space-x-3 md:space-x-4">
+                        <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-600 ml-1 md:ml-2">4.5</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-1 md:mr-2"></i>
+                            <span>Alexandria</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Booking/Price -->
+                <div class="p-4 md:p-8">
+                    <div class="flex justify-between items-center mb-4 md:mb-6">
+                        <span class="text-gray-500">Starting from</span>
+                        <div class="text-right">
+                            <p class="text-2xl md:text-3xl font-bold text-yellow-500">$1,900</p>
+                            <p class="text-sm text-gray-500">per person</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar-day text-yellow-500 mr-2 md:mr-3"></i>
+                            <span class="text-gray-600">5 Days / 4 Nights</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-utensils text-yellow-500 mr-2 md:mr-3"></i>
+                            <span class="text-gray-600">Breakfast Included</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-plane text-yellow-500 mr-2 md:mr-3"></i>
+                            <span class="text-gray-600">Flight Included</span>
+                        </div>
+                    </div>
+                    
+                    <!-- BOOK NOW button -->
+                    <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 md:py-3 md:px-6 rounded-lg transition duration-300 package-book"
+                            data-package="NATURE-001" data-price="1900">
+                        BOOK NOW
+                    </button>
                 </div>
             </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8 md:mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3">
+                <!-- Left Column - Photo -->
+                <div class="h-64 md:h-96 bg-cover bg-center" style="background-image: url('/photos/Alexandria\ Opera\ House\,\ where\ celebrates\ the\ legacy\ of\ Sayyid\ Darwish\ performance\ tells\ a\ story🌹🎼.jpeg');">
+                </div>
+                
+                <!-- Middle Column - Package Details -->
+                <div class="p-4 md:p-8 border-r border-gray-200">
+                    <h3 class="playfair text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-3 md:mb-4">
+                        Alexandria's Art & Cultural Scene
+                    </h3>
+                    <p class="roboto-light text-gray-600 mb-4 md:mb-6">
+                        Alexandria's Art Galleries,Alexandria Contemporary Art Center or The Mahmoud Khalil Museum,The Alexandria Opera House,Alexandria Egyptian Museum,The Roman Theater and The Roman Baths,traditional Egyptian music performance.
+                    </p>
+                    <div class="flex items-center space-x-3 md:space-x-4">
+                        <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-600 ml-1 md:ml-2">5.0</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-1 md:mr-2"></i>
+                            <span>Alexandria</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Booking/Price -->
+                <div class="p-4 md:p-8">
+                    <div class="flex justify-between items-center mb-4 md:mb-6">
+                        <span class="text-gray-500">Starting from</span>
+                        <div class="text-right">
+                            <p class="text-2xl md:text-3xl font-bold text-yellow-500">$3,200</p>
+                            <p class="text-sm text-gray-500">per person</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar-day text-yellow-500 mr-2 md:mr-3"></i>
+                            <span class="text-gray-600">7 Days / 6 Nights</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-utensils text-yellow-500 mr-2 md:mr-3"></i>
+                            <span class="text-gray-600">All Meals Included</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-hotel text-yellow-500 mr-2 md:mr-3"></i>
+                            <span class="text-gray-600">Luxury Resort</span>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 md:py-3 md:px-6 rounded-lg transition duration-300 package-book"
+                            data-package="ALAXANDRIA'S-001" data-price="3200">
+                        BOOK NOW
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="button-container py-8 md:py-16" style="margin-top: 10px;">
+            <a href="packages.html">
+                <button class="button bg-yellow-500">Explore</button>
+            </a>
+            <a href="booking.html">
+                <button class="button bg-yellow-500">Customize</button>
+            </a>
         </div>
     </div>
 </section>
 
-   <!-- packages -->
-        <section class="bg-gray-50">
-            
-            <div class="container mx-auto px-6 py-16">
-                <!-- Popular Packages Header -->
-                <div class="text-center mb-12">
-                    <h2 class="roboto-light text-4xl font-bold text-gray-800 mb-2">POPULAR PACKAGES</h2>
-                    <p class="roboto-light text-yellow-500">CHECKOUT OUR PACKAGES</p>
-                </div>
-        
-                <!-- Description Text -->
-                <!-- <p class="roboto-light text-gray-600 text-center max-w-2xl mx-auto mb-16">
-                    Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, 
-                    rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
-                </p> -->
-        
-                <!-- Package 1 -->
-             <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-12">
-    <div class="grid grid-cols-1 md:grid-cols-3">
-         <!-- Left Column - Photo -->
-                <div class="h-96 bg-cover bg-center" style="background-image: url('/photos/Stanley\ bridge\,\ Alexandria\,\ Egypt.jpeg');">
-                </div>
-        <!-- Middle Column - Package Details -->
-        <div class="p-8 border-r border-gray-200">
-            <h3 class="playfair text-3xl font-bold text-gray-800 mb-4">
-                Nature & Adventure
-            </h3>
-            <p class="roboto-light text-gray-600 mb-6">
-                Lake Mariout,Kayaking or Windsurfing at Abu Qir Bay,Ras El-Tin Palace,Montaza Beach or Stanley Bridge
-            </p>
-            <div class="flex items-center space-x-4">
-                <div class="flex items-center text-yellow-500">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <span class="text-gray-600 ml-2">4.5</span>
-                </div>
-                <div class="flex items-center text-gray-600">
-                    <i class="fas fa-map-marker-alt mr-2"></i>
-                    <span>Alexandria</span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Right Column - Booking/Price -->
-        <div class="p-8">
-            <div class="flex justify-between items-center mb-6">
-                <span class="text-gray-500">Starting from</span>
-                <div class="text-right">
-                    <p class="text-3xl font-bold text-yellow-500">$1,900</p>
-                    <p class="text-sm text-gray-500">per person</p>
-                </div>
-            </div>
-            
-            <div class="space-y-4 mb-8">
-                <div class="flex items-center">
-                    <i class="fas fa-calendar-day text-yellow-500 mr-3"></i>
-                    <span class="text-gray-600">5 Days / 4 Nights</span>
-                </div>
-                <div class="flex items-center">
-                    <i class="fas fa-utensils text-yellow-500 mr-3"></i>
-                    <span class="text-gray-600">Breakfast Included</span>
-                </div>
-                <div class="flex items-center">
-                    <i class="fas fa-plane text-yellow-500 mr-3"></i>
-                    <span class="text-gray-600">Flight Included</span>
-                </div>
-            </div>
-            
-            <!-- Modified BOOK NOW button with data attributes -->
-            <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 package-book"
-                    data-package="NATURE-001" data-price="1900">
-                BOOK NOW
-            </button>
-        </div>
-    </div>
-</div>
-
-<!-- Add the booking modal HTML right before your closingtag -->
+<!-- Booking Modal -->
 <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
-        <div class="flex justify-between items-center mb-6">
-            <h3 class="text-2xl font-bold text-gray-800">Complete Your Booking</h3>
+    <div class="bg-white rounded-xl p-6 md:p-8 w-full max-w-sm mx-4 md:max-w-md">
+        <div class="flex justify-between items-center mb-4 md:mb-6">
+            <h3 class="text-xl md:text-2xl font-bold text-gray-800">Complete Your Booking</h3>
             <button id="close-modal" class="text-gray-500 hover:text-gray-700">
                 <i class="fas fa-times"></i>
             </button>
@@ -708,24 +758,24 @@
             <input type="hidden" id="package-id">
             <input type="hidden" id="package-price">
             
-            <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Full Name</label>
-                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-yellow-500 focus:border-yellow-500" required>
+            <div class="mb-3 md:mb-4">
+                <label class="block text-gray-700 mb-1 md:mb-2">Full Name</label>
+                <input type="text" class="w-full px-3 py-2 md:px-4 md:py-2 border rounded-lg focus:ring-yellow-500 focus:border-yellow-500" required>
             </div>
             
-            <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Email</label>
-                <input type="email" class="w-full px-4 py-2 border rounded-lg focus:ring-yellow-500 focus:border-yellow-500" required>
+            <div class="mb-3 md:mb-4">
+                <label class="block text-gray-700 mb-1 md:mb-2">Email</label>
+                <input type="email" class="w-full px-3 py-2 md:px-4 md:py-2 border rounded-lg focus:ring-yellow-500 focus:border-yellow-500" required>
             </div>
             
-            <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Phone</label>
-                <input type="tel" class="w-full px-4 py-2 border rounded-lg focus:ring-yellow-500 focus:border-yellow-500" required>
+            <div class="mb-3 md:mb-4">
+                <label class="block text-gray-700 mb-1 md:mb-2">Phone</label>
+                <input type="tel" class="w-full px-3 py-2 md:px-4 md:py-2 border rounded-lg focus:ring-yellow-500 focus:border-yellow-500" required>
             </div>
             
-            <div class="mb-6">
-                <label class="block text-gray-700 mb-2">Travel Date</label>
-                <input type="date" class="w-full px-4 py-2 border rounded-lg focus:ring-yellow-500 focus:border-yellow-500" required>
+            <div class="mb-4 md:mb-6">
+                <label class="block text-gray-700 mb-1 md:mb-2">Travel Date</label>
+                <input type="date" class="w-full px-3 py-2 md:px-4 md:py-2 border rounded-lg focus:ring-yellow-500 focus:border-yellow-500" required>
             </div>
             
             <div class="flex justify-between items-center">
@@ -733,7 +783,7 @@
                     <span class="font-semibold">Total:</span>
                     <span id="modal-total" class="text-yellow-500 font-bold ml-2">$0</span>
                 </div>
-                <button type="submit" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-lg transition">
+                <button type="submit" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 md:py-2 md:px-6 rounded-lg transition">
                     Confirm Booking
                 </button>
             </div>
@@ -741,222 +791,136 @@
     </div>
 </div>
 
-        
-                <!-- Package 2 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-12">
-                    <div class="grid grid-cols-1 md:grid-cols-3">
-                         <!-- Left Column - Photo -->
-                <div class="h-96 bg-cover bg-center" style="background-image: url('/photos/Alexandria\ Opera\ House\,\ where\ celebrates\ the\ legacy\ of\ Sayyid\ Darwish\ performance\ tells\ a\ story🌹🎼.jpeg');">
-                </div>
-                        
-                        
-                        <!-- Middle Column - Package Details -->
-                        <div class="p-8 border-r border-gray-200">
-                            <h3 class="playfair text-3xl font-bold text-gray-800 mb-4">
-                               Alexandria’s Art & Cultural Scene
-                            </h3>
-                            <p class="roboto-light text-gray-600 mb-6">
-                               Alexandria’s Art Galleries,Alexandria Contemporary Art Center or The Mahmoud Khalil Museum,The Alexandria Opera House,Alexandria Egyptian Museum,The Roman Theater and The Roman Baths,traditional Egyptian music performance.
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="flex items-center text-yellow-500">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span class="text-gray-600 ml-2">5.0</span>
-                                </div>
-                                <div class="flex items-center text-gray-600">
-                                    <i class="fas fa-map-marker-alt mr-2"></i>
-                                    <span>Alexandria</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Right Column - Booking/Price -->
-                        <div class="p-8">
-                            <div class="flex justify-between items-center mb-6">
-                                <span class="text-gray-500">Starting from</span>
-                                <div class="text-right">
-                                    <p class="text-3xl font-bold text-yellow-500">$3,200</p>
-                                    <p class="text-sm text-gray-500">per person</p>
-                                </div>
-                            </div>
-                            
-                            <div class="space-y-4 mb-8">
-                                <div class="flex items-center">
-                                    <i class="fas fa-calendar-day text-yellow-500 mr-3"></i>
-                                    <span class="text-gray-600">7 Days / 6 Nights</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-utensils text-yellow-500 mr-3"></i>
-                                    <span class="text-gray-600">All Meals Included</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-hotel text-yellow-500 mr-3"></i>
-                                    <span class="text-gray-600">Luxury Resort</span>
-                                </div>
-                            </div>
-                            
-                            <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 package-book"
-                    data-package="ALAXANDRIA'S-001" data-price="3200">
-                BOOK NOW
-            </button>
-                        </div>
-                    </div>
-                </div>
- <div class="button-container py-16" style="margin-top: 10px; ">
-                <a href="packages.html">
-                <button class="button bg-yellow-500">Explore</button></a>
-                <a href="booking.html">
-                <button class="button bg-yellow-500">Customize</button>
-            </a>
-            </div>
-
-            </div>
-
-            <!-- <div class="button-container py-16" style="margin-top: 10px; ">
-                <a href="packages.html">
-                <button class="button bg-yellow-500">Explore</button></a>
-                <a href="booking.html">
-                <button class="button bg-yellow-500">Customize</button>
-            </a>
-            </div> -->
-             <!-- View All Button -->
-             <!-- <div class="text-center mt-12">
-                <a href="booking.html">
-                <button class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition duration-300">
-                    VIEW ALL PACKAGES
-                </button>
-            </a>
-            </div> -->
-        <!-- </div> -->
-            </section>
-    
-    
-
-
- <!-- Gallery Section -->
-<section class="bg-[#326964] pt-0 -mt-8">
-    <div class="container mx-auto px-0">
-        <!-- Instagram Header -->
-        <div class="flex items-center justify-center mb-8 pt-6">
-            <h2 class="text-4xl font-bold text-white">TRAVEL GALLERIES</h2>
-            <span class="ml-2 text-xl text-yellow-500">></span>
+<!-- Success Message (hidden by default) -->
+<div id="success-message" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-xl p-6 md:p-8 w-full max-w-sm mx-4 md:max-w-md text-center">
+        <div class="text-green-500 text-4xl mb-4">
+            <i class="fas fa-check-circle"></i>
         </div>
-        
-        <div class="slider-container pb-8 w-full overflow-hidden">
-            <div class="slider-track" id="autoSlider">
-                <!-- Images will be added dynamically by JavaScript -->
-            </div>
-        </div>
+        <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">Booking Successful!</h3>
+        <p class="text-gray-600 mb-4">Thank you for your booking. We've sent a confirmation to your email.</p>
+        <button id="close-success" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-lg transition">
+            Close
+        </button>
     </div>
-</section>
-<!-- 
-        <svg id="overlay" xmlns="http://www.w3.org/2000/svg"></svg>    -->
-
- <!-- Contact Section -->
-     <section id="contact" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="playfair text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Have questions? Our travel experts are here to help</p>
-            </div>
+</div>
     
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <div class="slide-in" style="animation-delay: 0.2s;">
-                    <h3 class="playfair text-xl font-bold text-gray-800 mb-4">Get in Touch</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-yellow-500 mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Address</h4>
-                                <p class="text-gray-600">123 Corniche Street, Alexandria, Egypt</p>
+        <!-- Gallery Section -->
+        <section class="bg-[#326964] pt-0 -mt-4 md:-mt-8">
+            <div class="container mx-auto px-0">
+                <!-- Instagram Header -->
+                <div class="flex items-center justify-center mb-6 md:mb-8 pt-4 md:pt-6">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white">TRAVEL GALLERIES</h2>
+                    <span class="ml-2 text-lg md:text-xl text-yellow-500">></span>
+                </div>
+                
+                <div class="slider-container pb-6 md:pb-8 w-full overflow-hidden">
+                    <div class="slider-track" id="autoSlider">
+                        <!-- Images will be added dynamically by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-8 md:py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-8 md:mb-16 fade-in">
+                    <h2 class="playfair text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-6">Contact Us</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Have questions? Our travel experts are here to help</p>
+                </div>
+        
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+                    <div class="slide-in" style="animation-delay: 0.2s;">
+                        <h3 class="playfair text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Get in Touch</h3>
+                        <div class="space-y-3 md:space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-yellow-500 mt-1 mr-3 md:mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Address</h4>
+                                    <p class="text-gray-600">123 Corniche Street, Alexandria, Egypt</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-phone-alt text-yellow-500 mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Phone</h4>
-                                <p class="text-gray-600">+20 3 1234567</p>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-yellow-500 mt-1 mr-3 md:mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">+20 3 1234567</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-envelope text-yellow-500 mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Email</h4>
-                                <p class="text-gray-600">info@alexandriatravel.com</p>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-yellow-500 mt-1 mr-3 md:mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">info@alexandriatravel.com</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-    
-                <div class="slide-in" style="animation-delay: 0.4s;">
-                    <h3 class="playfair text-xl font-bold text-gray-800 mb-4">Send a Message</h3>
-                    <form class="space-y-4">
-                        <div>
-                            <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500">
-                        </div>
-                        <div>
-                            <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500">
-                        </div>
-                        <div>
-                            <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500"></textarea>
-                        </div>
-                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-lg transition">
-                            Send Message
-                        </button>
-                    </form>
+        
+                    <div class="slide-in" style="animation-delay: 0.4s;">
+                        <h3 class="playfair text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Send a Message</h3>
+                        <form class="space-y-3 md:space-y-4">
+                            <div>
+                                <input type="text" placeholder="Your Name" class="w-full px-3 py-2 md:px-4 md:py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Your Email" class="w-full px-3 py-2 md:px-4 md:py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <textarea placeholder="Your Message" rows="4" class="w-full px-3 py-2 md:px-4 md:py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 md:py-2 md:px-6 rounded-lg transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
     </main>
 
- 
-<!-- Enlarged Footer -->
-<footer class="bg-[#326964] text-white py-16">
-    <div class="container mx-auto px-8">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="space-y-4">
-                <h3 class="playfair text-3xl font-bold font-[Greek-Freak]">Alexplore</h3>
-                <p class="text-lg opacity-90 text-yellow-500">The Soul of the Mediterranean in Your Hands.</p>
-            </div>
-            
-            <div class="space-y-5">
-                <h4 class="font-semibold text-xl">Quick Links</h4>
-                <ul class="space-y-3 text-lg">
-                    <li><a href="packages.html" class="hover:text-yellow-500 transition duration-300">Packages</a></li>
-                    <li><a href="booking.html" class="hover:text-yellow-500 transition duration-300">Custom Trips</a></li>
-                    <li><a href="#contact" class="hover:text-yellow-500 transition duration-300">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="space-y-5">
-                <h4 class="font-semibold text-xl">Support</h4>
-                <ul class="space-y-3 text-lg">
-                    <li><a href="#" class="hover:text-yellow-500 transition duration-300">FAQs</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition duration-300">Terms & Conditions</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition duration-300">Privacy Policy</a></li>
-                </ul>
-            </div>
-            
-            <div class="space-y-5">
-                <h4 class="font-semibold text-xl">Follow Us</h4>
-                <div class="flex space-x-5 text-2xl">
-                    <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+    <!-- Enlarged Footer -->
+    <footer class="bg-[#326964] text-white py-8 md:py-16">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+                <div class="space-y-3 md:space-y-4">
+                    <h3 class="playfair text-2xl md:text-3xl font-bold font-[Greek-Freak]">Alexplore</h3>
+                    <p class="text-base md:text-lg opacity-90 text-yellow-500">The Soul of the Mediterranean in Your Hands.</p>
+                </div>
+                
+                <div class="space-y-4 md:space-y-5">
+                    <h4 class="font-semibold text-lg md:text-xl">Quick Links</h4>
+                    <ul class="space-y-2 md:space-y-3 text-base md:text-lg">
+                        <li><a href="packages.html" class="hover:text-yellow-500 transition duration-300">Packages</a></li>
+                        <li><a href="booking.html" class="hover:text-yellow-500 transition duration-300">Custom Trips</a></li>
+                        <li><a href="#contact" class="hover:text-yellow-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-4 md:space-y-5">
+                    <h4 class="font-semibold text-lg md:text-xl">Support</h4>
+                    <ul class="space-y-2 md:space-y-3 text-base md:text-lg">
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">FAQs</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-4 md:space-y-5">
+                    <h4 class="font-semibold text-lg md:text-xl">Follow Us</h4>
+                    <div class="flex space-x-4 md:space-x-5 text-xl md:text-2xl">
+                        <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
+            
+            <div class="border-t border-white/20 mt-8 md:mt-12 pt-6 md:pt-8 text-center text-base md:text-lg">
+                <p>&copy; 2025 Alexplore. All rights reserved.</p>
+            </div>
         </div>
-        
-        <div class="border-t border-white/20 mt-12 pt-8 text-center text-lg">
-            <p>&copy; 2025 Alexplore. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>

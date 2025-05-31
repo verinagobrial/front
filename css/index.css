@@ -7,47 +7,18 @@
 }
 
 body {
-    /* background-image: url(/photos/webdawn.png); */
-    /* background:#edfcfa; */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-size: 16px;
     line-height: 1.5;
-    /* Apply blur through backdrop-filter instead */
 }
 
- /* Base styles (applies to all screens) */
-
-
-/* Tablet (768px and up) */
+/* Responsive font sizes */
 @media (min-width: 768px) {
     body {
         font-size: 18px;
-    }
-    .max-w-md {
-        max-width: 90%;
-    }
-}
-
-/* Laptop (1024px and up) */
-@media (min-width: 1024px) {
-    .max-w-md {
-        max-width: 800px;
-    }
-}
-
-/* Mobile (below 768px) */
-@media (max-width: 767px) {
-    .p-8 {
-        padding: 1.5rem;
-    }
-    .text-2xl {
-        font-size: 1.5rem;
-    }
-    button, input, select {
-        width: 100%;
     }
 }
 
@@ -55,27 +26,14 @@ img, video {
     max-width: 100%;
     height: auto;
 }
+
 @media (max-width: 640px) {
     #booking-modal .max-w-md {
         width: 95%;
         margin: 0 auto;
     }
 }
-/* .navbar-scrolled {
-background-color:#30444b;
 
-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-
-} */
-/* Change this to your desired scroll color */
-/* Optional: change text color if needed */
-/* color: white; */
-/* Optional: if you want to change the logo/text color when scrolled */
-/* .navbar-scrolled .text-white {
-color: #f8fafc; 
-} */
-/* Change to your desired text color */
-/* Add this to create a blurred overlay effect */
 body::before {
     content: "";
     position: fixed;
@@ -105,12 +63,10 @@ body::before {
     src: url('/fonts/Greek-Freak.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: swap; /* Ensures text remains visible during load */
-  }
-  
+    font-display: swap;
+}
 
-
- /* Photo Slider Styles */
+/* Photo Slider Styles */
 .slider-container {
     width: 100%;
     overflow: hidden;
@@ -119,14 +75,14 @@ body::before {
 
 .slider-track {
     display: flex;
-    height: 300px; /* Square shape */
+    height: 200px;
     align-items: center;
     transition: transform 0.5s ease;
 }
 
 .slider-item {
-    min-width: 250px; /* Square shape */
-    height: 250px;
+    min-width: 200px;
+    height: 200px;
     padding: 0 10px;
 }
 
@@ -137,34 +93,15 @@ body::before {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-/* Card Styling */
-.tour-card {
-    border-radius: 30px;
-    background: white;
-    padding: 0px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.tour-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.tour-card img {
-    transition: transform 0.5s ease-in-out;
-    border-radius: 20px;
-}
-
-/* Heart Icon Animation */
-.heart-btn {
-    transition: all 0.3s ease-in-out;
-}
-
-.heart-btn.active {
-    color: red;
-    transform: scale(1.2);
+@media (min-width: 768px) {
+    .slider-track {
+        height: 250px;
+    }
+    .slider-item {
+        min-width: 250px;
+        height: 250px;
+    }
 }
 
 .button-container {
@@ -176,15 +113,22 @@ body::before {
 
 .button {
     background: rgb(255, 115, 0);
-    padding: 15px 25px;
+    padding: 12px 20px;
     border-radius: 10px;
     text-align: center;
     color: white;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    font-size: x-large;
+    font-size: 1rem;
     transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .button {
+        font-size: 1.25rem;
+        padding: 15px 25px;
+    }
 }
 
 .button:hover {
@@ -275,4 +219,94 @@ body::before {
 .roboto-light {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+}
+
+/* Main slideshow container styles */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    border: 6px solid #326964;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .slideshow-container {
+        border-width: 8px;
+        border-radius: 1.5rem;
+    }
+}
+
+/* Slideshow images */
+.slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 800ms ease-in-out;
+}
+
+.slideshow-image:first-child {
+    opacity: 1;
+}
+
+/* General section styling */
+.destination-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .destination-item {
+        flex-direction: row;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+}
+
+/* Text content styling */
+.slide-up {
+    padding: 0 1rem;
+}
+
+/* Container adjustments */
+.w-full {
+    width: 100%;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .w-3\/4 {
+        width: 75%;
+        max-width: 1200px;
+        padding: 0;
+    }
+}
+
+/* Ensure full width on mobile */
+@media (max-width: 767px) {
+    .w-full {
+        width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .p-8 {
+        padding: 1.5rem;
+    }
+    
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+    
+    button, input, select {
+        width: 100%;
+    }
 }

@@ -17,7 +17,7 @@
     pointer-events: none;
 }
 
-/* Responsive additions */
+/* Responsive additions - Enhanced mobile menu positioning */
 @media (max-width: 768px) {
     /* Adjust dropdown menu for mobile */
     #dropdown-menu {
@@ -26,6 +26,11 @@
         right: 0;
         border-radius: 0;
         border-top: 1px solid #e5e7eb;
+        position: fixed;
+        top: 70px !important;
+        z-index: 1000;
+        margin: 0 !important;
+        transform: none !important;
     }
     
     /* Adjust search card position and width */
@@ -51,6 +56,13 @@
     .bg-yellow-500.text-white.px-3.py-1_5 {
         padding: 0.5rem 0.75rem;
         font-size: 0.875rem;
+    }
+
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
     }
 }
 

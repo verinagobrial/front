@@ -1,8 +1,4 @@
-
-   
-   
-   
-   // package offers
+ // package offers
     document.getElementById('offerBtn').addEventListener('click', function() {
         const message = document.getElementById('offerMessage');
         if (message.classList.contains('hidden')) {
@@ -257,41 +253,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-   // Image arrays for each slideshow (add your 3 image paths for each)
-    const slideshowImages = {
-        slideshow1: [
-            "photos/1678607223.jpg",
-            "photos/lighthouse.jpeg",
-            "photos/Pompey’s Pillar In Alexandria And The Intriguing Secrets Below It!.jpeg"
-        ],
-        slideshow2: [
-            "photos/Alexandria Library Egypt.jpeg",
-            "photos/Alexandria Opera house.jpeg",
-            "photos/1.jpeg"
-        ],
-        slideshow3: [
-            "photos/synagogue.jpeg",
-            "photos/st_ mercurius coptic alexandria - Bing.jpeg",
-            "photos/274967-مسجد-العطارين-في-الإسكندرية.jpeg"
-        ]
-    };
-
-    // Initialize all slideshows
-    Object.keys(slideshowImages).forEach(slideshowId => {
+// destinations
+ document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.slideshow-container').forEach(container => {
+        const images = container.querySelectorAll('.slideshow-image');
         let currentIndex = 0;
-        const slideshow = document.getElementById(slideshowId);
-        
-        function changeImage() {
-            currentIndex = (currentIndex + 1) % slideshowImages[slideshowId].length;
-            const img = slideshow.querySelector('img');
-            img.src = slideshowImages[slideshowId][currentIndex];
-        }
-        
-        // Change image every second (1000 milliseconds)
-        setInterval(changeImage, 1000);
-    });
+        let interval;
 
+        function changeImage() {
+            images[currentIndex].style.opacity = '0';
+            currentIndex = (currentIndex + 1) % images.length;
+            setTimeout(() => images[currentIndex].style.opacity = '1', 50);
+        }
+
+        function startSlideshow() {
+            interval = setInterval(changeImage, 2000);
+        }
+
+        container.addEventListener('mouseenter', () => clearInterval(interval));
+        container.addEventListener('mouseleave', startSlideshow);
+        
+        startSlideshow();
+    });
+});
 
     // Automatic Photo Slider
 document.addEventListener('DOMContentLoaded', function() {
