@@ -33,10 +33,10 @@ html, body {
     font-display: swap;
 }
 
-/* #contact {
+#contact {
     padding: 60px 0;
     margin: 60px 0 0;
-} */
+}
 
 /* Login Container */
 section.flex.items-center.justify-center.py-24 > .container {
@@ -68,7 +68,7 @@ section.flex.items-center.justify-center.py-24 > .container {
     margin: 60px 0 0 ;
 }
 
-/* #contact .container {
+#contact .container1 {
     background: transparent ;
     box-shadow: none ;
     width: 100%;
@@ -76,13 +76,13 @@ section.flex.items-center.justify-center.py-24 > .container {
     margin: 0 auto ;
     padding: 0 1rem;
     border-radius: 0;
-} */
+}
 
-/* footer {
+footer {
     width: 100%;
    
     padding: 40px 0;
-} */
+}
 
 .form-box{
     position: absolute;
@@ -446,7 +446,7 @@ form{
     
     }
     .toggle-panel.toggle-right h1{
-        font-size: 5px;
+        font-size: 30px;
     }
     
     
