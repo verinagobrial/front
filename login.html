@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/nastyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
      <!-- Font Awesome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
      <!-- Swiper CSS -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -26,11 +24,24 @@
     <script defer src="script.js/log.js"></script>
     <script src="script.js/footer.js" defer></script>
     <script src="script.js/nav.js" defer></script>
-    <!-- <style type="text/tailwindcss">
+ 
        
 
+    <script>
+      // Disable right-click + DevTools shortcuts (applies to all pages)
+      document.addEventListener('contextmenu', (e) => e.preventDefault());
+      document.addEventListener('keydown', (e) => {
+        if (
+          e.key === 'F12' ||
+          (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+          (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+          (e.ctrlKey && e.key === 'U')
+        ) {
+          e.preventDefault();
+        }
+      });
+    </script>
 
-</style> -->
     
 </head>
 <body class="overflow-x-hidden flex flex-col min-h-screen">
@@ -96,8 +107,7 @@
     
 
 
-        <section class="flex items-center justify-center py-24">
-    <!-- <img src="photos/web.jpg"> -->
+ <section class="flex items-center justify-center py-24">
    <div class="container">
     <div class="form-box login">
         
@@ -123,8 +133,8 @@
         </form>
     </div>
 
-    <div class="form-box register">
-        
+
+    <div class="form-box register">  
         <form action="">
             <h1 style="color: white;">Registration</h1>
             <div class="input-box">
@@ -162,44 +172,45 @@
     </div>
    </div>
         </section>
+
  <!-- Contact Section -->
-      <section id="contact" class="py-16 bg-white">
+    <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="playfair text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Have questions? Our travel experts are here to help</p>
             </div>
     
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <div class="slide-in" style="animation-delay: 0.2s;">
-                    <h3 class="playfair text-xl font-bold text-gray-800 mb-4">Get in Touch</h3>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Get in Touch</h3>
                     <div class="space-y-4">
                         <div class="flex items-start">
                             <i class="fas fa-map-marker-alt text-yellow-500 mt-1 mr-4"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-800">Address</h4>
-                                <p class="text-gray-600">123 Corniche Street, Alexandria, Egypt</p>
+                                <p style="color: #4B5563;">123 Corniche Street, Alexandria, Egypt</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-phone-alt text-yellow-500 mt-1 mr-4"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-800">Phone</h4>
-                                <p class="text-gray-600">+20 3 1234567</p>
+                                <p style="color: #4B5563;">+20 3 1234567</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-envelope text-yellow-500 mt-1 mr-4"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-800">Email</h4>
-                                <p class="text-gray-600">info@alexandriatravel.com</p>
+                                <p style="color: #4B5563;">info@alexandriatravel.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
     
-                <div class="slide-in" style="animation-delay: 0.4s;">
-                    <h3 class="playfair text-xl font-bold text-gray-800 mb-4">Send a Message</h3>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Send a Message</h3>
                     <form class="space-y-4">
                         <div>
                             <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500">
@@ -219,48 +230,48 @@
         </div>
     </section>
 
-<!-- Enlarged Footer -->
-<footer class="bg-[#326964] text-white py-16">
-<div class="container mx-auto px-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div class="space-y-4">
-            <h3 class="playfair text-3xl font-bold font-[Greek-Freak]">Alexplore</h3>
-            <p class="text-lg opacity-90 text-yellow-500">The Soul of the Mediterranean in Your Hands.</p>
-        </div>
-        
-        <div class="space-y-5">
-            <h4 class="font-semibold text-xl">Quick Links</h4>
-            <ul class="space-y-3 text-lg">
-                <li><a href="packages.html" class="hover:text-yellow-500 transition duration-300">Packages</a></li>
-                <li><a href="booking.html" class="hover:text-yellow-500 transition duration-300">Custom Trips</a></li>
-                <li><a href="#contact" class="hover:text-yellow-500 transition duration-300">Contact</a></li>
-            </ul>
-        </div>
-        
-        <div class="space-y-5">
-            <h4 class="font-semibold text-xl">Support</h4>
-            <ul class="space-y-3 text-lg">
-                <li><a href="#" class="hover:text-yellow-500 transition duration-300">FAQs</a></li>
-                <li><a href="#" class="hover:text-yellow-500 transition duration-300">Terms & Conditions</a></li>
-                <li><a href="#" class="hover:text-yellow-500 transition duration-300">Privacy Policy</a></li>
-            </ul>
-        </div>
-        
-        <div class="space-y-5">
-            <h4 class="font-semibold text-xl">Follow Us</h4>
-            <div class="flex space-x-5 text-2xl">
-                <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+    <!-- Footer -->
+    <footer class="bg-[#326964] text-white py-16">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="space-y-4">
+                    <h3 class="text-3xl font-bold font-[Greek-Freak]">Alexplore</h3>
+                    <p class="text-lg opacity-90" style="color: #eab308;">The Soul of the Mediterranean in Your Hands.</p>
+                </div>
+                
+                <div class="space-y-5">
+                    <h4 class="font-semibold text-xl">Quick Links</h4>
+                    <ul class="space-y-3 text-lg">
+                        <li><a href="packages.html" class="hover:text-yellow-500 transition duration-300">Packages</a></li>
+                        <li><a href="booking.html" class="hover:text-yellow-500 transition duration-300">Custom Trips</a></li>
+                        <li><a href="#contact" class="hover:text-yellow-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-5">
+                    <h4 class="font-semibold text-xl">Support</h4>
+                    <ul class="space-y-3 text-lg">
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">FAQs</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-5">
+                    <h4 class="font-semibold text-xl">Follow Us</h4>
+                    <div class="flex space-x-5 text-2xl">
+                        <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-yellow-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center text-lg">
+                <p>&copy; 2025 Alexplore. All rights reserved.</p>
             </div>
         </div>
-    </div>
-    
-    <div class="border-t border-white/20 mt-12 pt-8 text-center text-lg">
-        <p>&copy; 2025 Alexplore. All rights reserved.</p>
-    </div>
-</div>
-</footer>
+    </footer>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     const dropdownButton = document.getElementById('dropdown-button');

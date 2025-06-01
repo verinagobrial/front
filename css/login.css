@@ -20,6 +20,10 @@ main {
     display: flex;
     flex-direction: column;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 @font-face {
     font-family: 'Greek-Freak';
@@ -29,56 +33,56 @@ main {
     font-display: swap;
 }
 
-#contact {
+/* #contact {
     padding: 60px 0;
     margin: 60px 0 0;
-}
+} */
 
 /* Login Container */
 section.flex.items-center.justify-center.py-24 > .container {
-    width: 520px !important;
-    height: 570px !important;
-    margin: 0 auto !important;
-    background: transparent !important;
-    border-radius: 30px !important;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2) !important;
-    position: relative !important;
-    overflow: hidden !important;
-    z-index: 10 !important;
+    width: 520px;
+    height: 570px;
+    margin: 0 auto;
+    background: transparent;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
 }
 
 #contact {
-    background: white !important;
-    position: static !important;
-    transform: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-    margin-top: 60px 0 0 !important;
-    padding: 40px 0 !important;
-    width: 100vw !important;
+    background: white;
+    position: static ;
+    transform: none ;
+    border-radius: 0 ;
+    box-shadow: none ;
+    /* backdrop-filter: none ; */
+    margin-top: 60px 0 0 ;
+    padding: 40px 0 ;
+    width: 100vw ;
     position: relative;
     left: 0;
     right: 0;
     width: 100%;
-    margin: 60px 0 0 !important;
+    margin: 60px 0 0 ;
 }
 
-#contact .container {
-    background: transparent !important;
-    box-shadow: none !important;
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 1rem !important;
-    border-radius: 0;
-}
-
-footer {
+/* #contact .container {
+    background: transparent ;
+    box-shadow: none ;
     width: 100%;
-    color: white;
+    max-width: 1200px;
+    margin: 0 auto ;
+    padding: 0 1rem;
+    border-radius: 0;
+} */
+
+/* footer {
+    width: 100%;
+   
     padding: 40px 0;
-}
+} */
 
 .form-box{
     position: absolute;
@@ -264,9 +268,10 @@ form{
     cursor: pointer;
     border-radius: 8px;
 }
+
 @media  screen and (max-width: 650px){
     .container{
-        height: calc(100vh -40px);
+      height: calc(100vh - 40px);
     }
     .form-box{
         bottom: 0;
@@ -314,10 +319,12 @@ form{
     .toggle-panel h1{
         font-size: 30px;
     }
+    
+    
 }
 
 /* Additional Media Queries */
-@media (max-width: 1024px) {
+/* @media {
     section.flex.items-center.justify-center.py-24 > .container {
         width: 90% !important;
         max-width: 450px !important;
@@ -328,7 +335,7 @@ form{
     .form-box {
         padding: 30px !important;
     }
-}
+} */
 
 @media (max-width: 768px) {
     body {
@@ -350,12 +357,13 @@ form{
     }
 }
 
-@media (max-width: 480px) {
-    section.flex.items-center.justify-center.py-24 > .container {
+/* @media (max-width: 480px) {
+    section.flex.items-center.justify-center.py-24 >
         width: 95% !important;
-    }
-    
-    .form-box {
+
+    } */
+
+    /* .form-box {
         padding: 20px !important;
     }
     
@@ -365,28 +373,33 @@ form{
     
     .toggle-panel h1 {
         font-size: 28px !important;
-    }
-}
+    } */
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* Add these styles at the end of your CSS file */
-
-/* Make register form responsive like login form */
-@media screen and (max-width: 650px){
-    .container.active .form-box.register {
-        bottom: 0;
-        width: 100%;
-        height: 70%;
-        right: 0;
+@media (max-width: 480px) {
+    footer .grid {
+        grid-template-columns: 1fr !important;
     }
     
+}
+/* Toggle Button Styles */
+/* Make register form responsive like login form */
+@media screen and (max-width: 650px){
+  
+    .container.active .form-box.register {
+        bottom: 25.9%;
+        width: 100%;
+        height: 70.9%;
+        right: 0;
+     
+    }
+   .toggle-panel.register{
+       width: 100%;
+       height: 20.5%;
+    }
     .container.active .toggle-box::before {
-        top: 70%;
+        top: 80%;
         left: 0;
+        margin-top:0 ;
     }
     
     .container.active .toggle-panel.toggle-left {
@@ -396,11 +409,45 @@ html, body {
     
     .container.active .toggle-panel.toggle-right {
         bottom: 0;
+       
+      
+    }
+   
+  /* Remove all spacing */
+    .toggle-panel.toggle-right h1,
+    .toggle-panel.toggle-right p,
+    .toggle-panel.toggle-right .login-btn {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Specific element adjustments */
+    .toggle-panel.toggle-right .login-btn {
+        padding: 6px 12px;
+        /* margin-top: auto;  */
+        /* Tiny space below button */
+        
+   
+    }
+
+    
+
+    .toggle-panel.toggle-right h1 {
+      
+   
+    padding:0px;
+    margin-top: auto !important; /* Tiny space below button */
     }
 }
 
 @media screen and (max-width: 400px){
     .container.active .form-box.register {
-        padding: 20px;
+        padding: 10px;
+    
     }
+    .toggle-panel.toggle-right h1{
+        font-size: 5px;
+    }
+    
+    
 }

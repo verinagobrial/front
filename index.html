@@ -24,6 +24,21 @@
     <script src="script.js/index.js" defer></script>
     <script src="script.js/nav.js" defer></script>
     <script src="script.js/footer.js" defer></script>
+
+     <script>
+      // Disable right-click + DevTools shortcuts (applies to all pages)
+      document.addEventListener('contextmenu', (e) => e.preventDefault());
+      document.addEventListener('keydown', (e) => {
+        if (
+          e.key === 'F12' ||
+          (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+          (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+          (e.ctrlKey && e.key === 'U')
+        ) {
+          e.preventDefault();
+        }
+      });
+    </script>
 </head>
 <body class="overflow-x-hidden">
     <main>
@@ -922,5 +937,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>
